@@ -1,0 +1,6 @@
+#IDE FILES
+.idea/
+*.sln
+
+#.NET FILES
+obj/
