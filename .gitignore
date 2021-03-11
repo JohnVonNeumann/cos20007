@@ -1,6 +1,7 @@
 #IDE FILES
 .idea/
 *.sln
+bin/
 
 #.NET FILES
 obj/
