@@ -6,9 +6,7 @@ namespace HelloWorld
     {
         public static void Main(string[] args)
         {
-        
-        String[] message_text = {"Welcome back oh great eud"}
-        while ()    
+
         Message[] messages = new Message[4];
         messages[0] = new Message("Welcome back oh great educator");
         messages[1] = new Message("What a lovely name");
