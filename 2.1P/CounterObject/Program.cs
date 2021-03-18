@@ -2,11 +2,31 @@
 
 namespace CounterObject
 {
-    class Program
+    public class MainClass
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             Console.WriteLine("Hello World!");
+            Counter[] myCounters = new Counter[3];
+
+            myCounters[0] = new Counter("Counter 1");
+            myCounters[1] = new Counter("Counter 2");
+            myCounters[2] = new Counter(myCounters[0].Name);
+
+            for (int i = 0; i < 5; i++)
+            {
+                myCounters[0].Increment();
+            }
+
+        }
+
+        private static void PrintCounters(Counter[] counters)
+        {
+            foreach (var c in counters)
+            {
+                Console.WriteLine("{0} is {1}", c.Name, c.Ticks.ToString());
+                
+            }
         }
     }
 
