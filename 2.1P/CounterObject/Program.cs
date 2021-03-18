@@ -11,12 +11,23 @@ namespace CounterObject
 
             myCounters[0] = new Counter("Counter 1");
             myCounters[1] = new Counter("Counter 2");
-            myCounters[2] = new Counter(myCounters[0].Name);
+            myCounters[2] = myCounters[0];
 
             for (int i = 0; i < 5; i++)
             {
                 myCounters[0].Increment();
             }
+
+            for (int i = 0; i < 10; i++)
+            {
+                myCounters[1].Increment();
+            }
+
+            PrintCounters(myCounters);
+
+            myCounters[2].Reset();
+
+            PrintCounters(myCounters);
 
         }
 
