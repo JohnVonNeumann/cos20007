@@ -12,17 +12,17 @@ namespace ShapeDrawer
             {
                 SplashKit.ProcessEvents();
                 SplashKit.ClearScreen();
-                myShape.Draw();
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
                     myShape.X = SplashKit.MouseX();
                     myShape.Y = SplashKit.MouseY();
                 }
 
-                if (myShape.IsAt(SplashKit.MousePosition()))
+                if ((myShape.IsAt(SplashKit.MousePosition())) && (SplashKit.KeyTyped(KeyCode.SpaceKey)))
                 {
-                    myShape.Color = Color.Aquamarine;
+                    myShape.Color = Color.RandomRGB(255);
                 }
+                myShape.Draw();
                 SplashKit.RefreshScreen();
             } while (!SplashKit.WindowCloseRequested("Shape Drawer"));
         }
