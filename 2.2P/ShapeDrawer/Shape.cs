@@ -86,6 +86,24 @@ namespace ShapeDrawer
             }
         }
 
+        /// <summary>
+        /// property <c> Color </c>
+        /// Provides access to the Color field through a getter and setter
+        /// </summary>
+        /// <returns> Color - the colour value of the shape </returns>
+        /// <remarks> The only issue I see here is passing a Colour to the setter if the object isn't passed. </remarks>
+        public Color Color
+        {
+            get
+            {
+                return _color;
+            }
+            set
+            {
+                _color = value;
+            }
+        }
+
         public void Draw()
         {
             SplashKit.FillRectangle(_color, _x, _y, _width, _height);
