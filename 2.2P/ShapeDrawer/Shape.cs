@@ -1,4 +1,3 @@
-using System;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -104,6 +103,9 @@ namespace ShapeDrawer
             }
         }
 
+        /// <summary>
+        /// Method <c>Draw </c> - Simply uses the fields of the Shape to fill a rectangle on the screen.
+        /// </summary>
         public void Draw()
         {
             SplashKit.FillRectangle(_color, _x, _y, _width, _height);
