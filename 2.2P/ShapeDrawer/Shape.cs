@@ -69,9 +69,21 @@ namespace ShapeDrawer
             }
         }
 
-        public int Height()
+        /// <summary>
+        /// property <c> Height </c>
+        /// Provides access to the Height field through a getter and setter
+        /// </summary>
+        /// <returns> float - the value of _height which represents the height of a shape </returns>
+        public int Height
         {
-            return 0;
+            get
+            {
+                return _height;
+            }
+            set
+            {
+                _height = value;
+            }
         }
 
         public void Draw()
