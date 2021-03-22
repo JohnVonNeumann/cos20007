@@ -52,10 +52,21 @@ namespace ShapeDrawer
             }
         }
 
-        public int Width()
+        /// <summary>
+        /// property <c> Width </c>
+        /// Provides access to the Width field through a getter and setter
+        /// </summary>
+        /// <returns> int - the value of _width which represents the width of a shape </returns>
+        public int Width
         {
-
-            return 0;
+            get
+            {
+                return _width;
+            }
+            set
+            {
+                _width = value;
+            }
         }
 
         public int Height()
