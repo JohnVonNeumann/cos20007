@@ -18,6 +18,11 @@ namespace ShapeDrawer
             _width = 100;
         }
 
+        /// <summary>
+        /// property <c> X </c>
+        /// Provides access to the X field through a getter and setter
+        /// </summary>
+        /// <returns> float - the value of _x which represents the x-coordinate of a shape </returns>
         public float X
         {
             get
@@ -30,9 +35,13 @@ namespace ShapeDrawer
             }
         }
 
+        /// <summary>
+        /// property <c> Y </c>
+        /// Provides access to the Y field through a getter and setter
+        /// </summary>
+        /// <returns> float - the value of _y which represents the y-coordinate of a shape </returns>
         public float Y
         {
-
             get
             {
                 return _y;
