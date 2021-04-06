@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using SwinAdventure.IdentifiableObject;
 
 namespace SwinAdventure.Test
 {
