@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SwinAdventure
+namespace SwinAdventure.IdentifiableObject
 {
     /// <summary>
     /// class <c> IdentifiableObject </c>
