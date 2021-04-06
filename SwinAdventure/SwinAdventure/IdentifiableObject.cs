@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SwinAdventure
@@ -13,7 +14,7 @@ namespace SwinAdventure
 
         public IdentifiableObject(string[] idents)
         {
-            
+            throw new NotImplementedException("Implement test first");
         }
 
         /// <summary>
@@ -23,9 +24,10 @@ namespace SwinAdventure
         /// <returns> bool - true if the identifer is in _identifiers </returns>
         public bool AreYou(string id)
         {
-            bool areYou = false;
-
-            return areYou;
+            // bool areYou = false;
+            //
+            // return areYou;
+            throw new NotImplementedException("Implement test first");
         }
 
         /// <summary>
