@@ -3,7 +3,7 @@ using SwinAdventure.IdentifiableObject;
 
 namespace SwinAdventure.Test
 {
-    public class Tests
+    public class IdentifiableObjectTests
     {
         [SetUp]
         public void Setup()
