@@ -42,7 +42,6 @@ namespace SwinAdventure
                 {
                     identifier = _identifiers[0];
                 }
-
                 return identifier;
             }
         }
