@@ -3,15 +3,15 @@ using System.Collections.Generic;
 namespace SwinAdventure
 {
     /// <summary>
-    /// class <c> Identifiable </c>
+    /// class <c> IdentifiableObject </c>
     /// Players of Swin Adventure need to be able to "identify" a number of things in the game.
     /// This includes commands the user will perform, items they will interact with, location, paths, etc.
     /// </summary>
-    public class Identifiable
+    public class IdentifiableObject
     {
         private List<string> _identifiers;
 
-        public Identifiable(string[] idents)
+        public IdentifiableObject(string[] idents)
         {
             
         }
