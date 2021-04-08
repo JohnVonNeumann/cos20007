@@ -26,10 +26,7 @@ namespace SwinAdventure.Abstract
         /// <returns> bool - true if the identifer is in _identifiers </returns>
         public bool AreYou(string id)
         {
-            // bool areYou = false;
-            //
-            // return areYou;
-            throw new NotImplementedException("Implement test first");
+            return _identifiers.Contains(id);
         }
 
         /// <summary>
