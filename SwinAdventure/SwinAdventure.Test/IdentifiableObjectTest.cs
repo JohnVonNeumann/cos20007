@@ -33,6 +33,13 @@ namespace SwinAdventure.Test
             Assert.True(_iObject.AreYou(id: "hELLO"));
             Assert.True(_iObject.AreYou(id: "hello"));
         }
+
+        [Test]
+        public void TestFirstId()
+        {
+            Assert.AreEqual("Hello", _iObject.FirstId);
+            Assert.AreNotEqual("World", _iObject.FirstId);
+        }
         
     }
 }
