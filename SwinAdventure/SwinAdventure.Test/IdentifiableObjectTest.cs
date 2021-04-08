@@ -30,6 +30,9 @@ namespace SwinAdventure.Test
         public void TestCaseSensitive()
         {
             Assert.True(_iObject.AreYou(id: "HELLO"));
+            Assert.True(_iObject.AreYou(id: "hELLO"));
+            Assert.True(_iObject.AreYou(id: "hello"));
         }
+        
     }
 }
