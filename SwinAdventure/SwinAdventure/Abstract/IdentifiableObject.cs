@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SwinAdventure.Abstract
 {
@@ -26,7 +28,7 @@ namespace SwinAdventure.Abstract
         /// <returns> bool - true if the identifer is in _identifiers </returns>
         public bool AreYou(string id)
         {
-            return _identifiers.Contains(id);
+            return _identifiers.Contains(id, StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
