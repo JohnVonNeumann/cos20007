@@ -25,5 +25,11 @@ namespace SwinAdventure.Test
         {
             Assert.False(_iObject.AreYou( id: "Doesn't exist"));
         }
+
+        [Test]
+        public void TestCaseSensitive()
+        {
+            Assert.True(_iObject.AreYou(id: "HELLO"));
+        }
     }
 }
