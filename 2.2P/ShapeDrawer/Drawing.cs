@@ -21,6 +21,15 @@ namespace ShapeDrawer
             
         }
 
+        public void Draw()
+        {
+            SplashKit.ClearScreen(_background);
+            foreach (Shape shape in _shapes)
+            {
+                shape.Draw();
+            }
+        }
+
         public void AddShape(Shape shape)
         {
             _shapes.Add(shape);
