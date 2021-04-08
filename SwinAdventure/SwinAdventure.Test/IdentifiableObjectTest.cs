@@ -21,7 +21,13 @@ namespace SwinAdventure.Test
         {
             _iObject = new IdentifiableObject(idents);
             Assert.True(_iObject.AreYou("Hello"));
-            Assert.False(_iObject.AreYou("Meme"));
+        }
+
+        [Test]
+        public void TestNotAreYou()
+        {
+            _iObject = new IdentifiableObject(idents);
+            Assert.False(_iObject.AreYou("Doesn't exist"));
         }
     }
 }
