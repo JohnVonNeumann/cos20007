@@ -11,23 +11,19 @@ namespace SwinAdventure.Test
         [SetUp]
         public void Setup()
         {
-            // string[] idents;
-            // idents = new[] { "Hello", "World" };
-            // _iObject = new IdentifiableObject(idents);
+            _iObject = new IdentifiableObject(idents);
         }
 
         [Test]
         public void TestAreYou()
         {
-            _iObject = new IdentifiableObject(idents);
-            Assert.True(_iObject.AreYou("Hello"));
+            Assert.True(_iObject.AreYou(id: "Hello"));
         }
 
         [Test]
         public void TestNotAreYou()
         {
-            _iObject = new IdentifiableObject(idents);
-            Assert.False(_iObject.AreYou("Doesn't exist"));
+            Assert.False(_iObject.AreYou( id: "Doesn't exist"));
         }
     }
 }
