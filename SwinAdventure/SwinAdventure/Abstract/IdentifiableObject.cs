@@ -10,11 +10,14 @@ namespace SwinAdventure.Abstract
     /// </summary>
     public class IdentifiableObject
     {
-        private List<string> _identifiers;
+        private List<string> _identifiers = new List<string>();
 
         public IdentifiableObject(string[] idents)
         {
-            throw new NotImplementedException("Implement test first");
+            foreach (string ident in idents)
+            {
+               _identifiers.Add(ident);
+            }
         }
 
         /// <summary>
