@@ -11,7 +11,7 @@ namespace SwinAdventure.Abstract
     /// </summary>
     public class IdentifiableObject
     {
-        private List<string> _identifiers = new List<string>();
+        private readonly List<string> _identifiers = new List<string>();
 
         public IdentifiableObject(string[] idents)
         {
