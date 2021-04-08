@@ -40,6 +40,13 @@ namespace SwinAdventure.Test
             Assert.AreEqual("Hello", _iObject.FirstId);
             Assert.AreNotEqual("World", _iObject.FirstId);
         }
+
+        [Test]
+        public void TestAddId()
+        {
+            _iObject.AddIdentifier("Wilma");
+            Assert.True(_iObject.AreYou("Wilma"));
+        }
         
     }
 }
