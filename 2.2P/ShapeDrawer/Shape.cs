@@ -7,6 +7,7 @@ namespace ShapeDrawer
         private Color _color;
         private float _x, _y;
         private int _width, _height;
+        private Shape _selected;
         
         public Shape()
         {
@@ -15,6 +16,14 @@ namespace ShapeDrawer
             _y = 0;
             _height = 100;
             _width = 100;
+        }
+
+        public Shape Selected
+        {
+            get
+            {
+                return _selected;
+            }
         }
 
         /// <summary>
