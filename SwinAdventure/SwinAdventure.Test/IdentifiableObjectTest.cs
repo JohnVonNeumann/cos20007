@@ -1,19 +1,27 @@
 using NUnit.Framework;
-using SwinAdventure.IdentifiableObject;
+using SwinAdventure.Abstract;
 
 namespace SwinAdventure.Test
 {
     public class IdentifiableObjectTests
     {
+        private IdentifiableObject _iObject;
+        private string[] idents = new []{"Hello", "World"};
+
         [SetUp]
         public void Setup()
         {
+            // string[] idents;
+            // idents = new[] { "Hello", "World" };
+            // _iObject = new IdentifiableObject(idents);
         }
 
         [Test]
-        public void Test1()
+        public void TestAreYou()
         {
-            Assert.Pass();
+            _iObject = new IdentifiableObject(idents);
+            Assert.True(_iObject.AreYou("Hello"));
+            Assert.False(_iObject.AreYou("Meme"));
         }
     }
 }
