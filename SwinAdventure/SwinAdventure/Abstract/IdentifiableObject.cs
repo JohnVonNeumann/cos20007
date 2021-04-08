@@ -55,7 +55,7 @@ namespace SwinAdventure.Abstract
         /// <param name="id"> string - the identifier to be added to _identifiers, before lowercase conversion </param>
         public void AddIdentifier(string id)
         {
-            
+            _identifiers.Add(id);
         }
     }
 }
