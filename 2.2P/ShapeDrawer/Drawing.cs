@@ -41,6 +41,23 @@ namespace ShapeDrawer
                 shape.Selected = shape.IsAt(pt);
             }
         }
+
+        public List<Shape> SelectedShapes
+        {
+            get
+            {
+                List<Shape> result = new List<Shape>();
+                foreach (Shape shape in _shapes)
+                {
+                    if (shape.Selected is true)
+                    {
+                        result.Add(shape);
+                    }
+                }
+
+                return result;
+            }
+        }
         
         public Color Background
         {
