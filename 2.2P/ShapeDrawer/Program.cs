@@ -6,7 +6,7 @@ namespace ShapeDrawer
     {
         public static void Main()
         {
-            Shape myShape = new Shape();
+            Drawing drawing = new Drawing();
             new Window("Shape Drawer", 800, 600);
             do
             {
@@ -14,15 +14,17 @@ namespace ShapeDrawer
                 SplashKit.ClearScreen();
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
+                    Shape myShape = new Shape();
                     myShape.X = SplashKit.MouseX();
                     myShape.Y = SplashKit.MouseY();
+                    drawing.AddShape(myShape);
                 }
 
-                if ((myShape.IsAt(SplashKit.MousePosition())) && (SplashKit.KeyTyped(KeyCode.SpaceKey)))
+                if (SplashKit.KeyTyped(KeyCode.SpaceKey))
                 {
-                    myShape.Color = Color.RandomRGB(255);
+                    drawing.Background = Color.RandomRGB(255);
                 }
-                myShape.Draw();
+                drawing.Draw();
                 SplashKit.RefreshScreen();
             } while (!SplashKit.WindowCloseRequested("Shape Drawer"));
         }
