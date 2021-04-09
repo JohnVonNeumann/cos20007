@@ -8,7 +8,7 @@ namespace ShapeDrawer
     {
 
         private readonly List<Shape> _shapes;
-        private readonly Color _background;
+        private Color _background;
 
         public Drawing(Color background)
         {
@@ -40,6 +40,11 @@ namespace ShapeDrawer
             get
             {
                 return _background;
+            }
+
+            set
+            {
+                _background = value;
             }
         }
 
