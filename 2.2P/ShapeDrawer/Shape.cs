@@ -147,5 +147,15 @@ namespace ShapeDrawer
 
             return pointWithinRange;
         }
+
+        public void DrawOutline(Shape shape)
+        {
+            SplashKit.FillRectangle(
+                clr: Color.Black,
+                x: (_x - 2.0),
+                y: (_y - 2.0),
+                width: (_width + 4.0),
+                height: (_height + 4.0));
+        }
     }
 }
