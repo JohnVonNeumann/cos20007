@@ -25,6 +25,11 @@ namespace ShapeDrawer
             {
                 return _selected;
             }
+
+            set
+            {
+                _selected = value;
+            }
         }
 
         /// <summary>
