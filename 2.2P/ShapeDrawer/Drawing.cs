@@ -33,6 +33,14 @@ namespace ShapeDrawer
         {
             _shapes.Add(shape);
         }
+
+        public void SelectShapesAt(Point2D pt)
+        {
+            foreach (Shape shape in _shapes)
+            {
+                shape.Selected = shape.IsAt(pt);
+            }
+        }
         
         public Color Background
         {
