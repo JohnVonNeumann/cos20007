@@ -1,3 +1,5 @@
+using System;
+using System.Xml;
 using NUnit.Framework;
 
 namespace Clock.Test
@@ -27,6 +29,19 @@ namespace Clock.Test
             _counter.Increment();
             Assert.AreEqual(newValue, _counter.Ticks);
             
+        }
+
+        [Test]
+        public void TestMultipleIncrement()
+        {
+            int previousValue = _counter.Ticks;
+            int newValue = previousValue + 3;
+            for (int i = 0; i < newValue; i++)
+            {
+                _counter.Increment();
+                
+            }
+            Assert.AreEqual(newValue, _counter.Ticks);
         }
     }
 }
