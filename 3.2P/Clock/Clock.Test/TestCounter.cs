@@ -4,15 +4,19 @@ namespace Clock.Test
 {
     public class TestCounter
     {
+
+        private Counter _counter;
+
         [SetUp]
         public void Setup()
         {
+            _counter = new Counter("testCounter");
         }
 
         [Test]
-        public void Test1()
+        public void TestInitialisedCounterIsZero()
         {
-            Assert.Pass();
+            Assert.AreEqual(0, _counter.Ticks);
         }
     }
 }
