@@ -18,5 +18,13 @@ namespace Clock.Test
         {
             Assert.AreEqual(0, _counter.Ticks);
         }
+
+        [Test]
+        public void TestIncrementCounter()
+        {
+            _counter.Increment();
+            Assert.AreEqual(1, _counter.Ticks);
+            
+        }
     }
 }
