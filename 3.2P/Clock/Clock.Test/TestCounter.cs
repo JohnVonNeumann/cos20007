@@ -22,8 +22,10 @@ namespace Clock.Test
         [Test]
         public void TestIncrementCounter()
         {
+            int previousValue = _counter.Ticks;
+            int newValue = previousValue + 1;
             _counter.Increment();
-            Assert.AreEqual(1, _counter.Ticks);
+            Assert.AreEqual(newValue, _counter.Ticks);
             
         }
     }
