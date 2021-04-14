@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Clock *-- "3" Counter : contains
+
+class Clock {
+__fields__
+    - Counter hour
+    - Counter minute 
+    - Counter second
+__properties__
+.. getters ..
+    + string time 
+__methods__
+    + Clock()
+    + void tick()
+    + void reset()
+}
+
+class Counter {
+__fields__
+    - int _count
+    - string _name
+__properties__
+    + string Name
+.. get only ..
+    + int Ticks
+__methods__
+    + Counter(string name)
+    + Increment()
+    + Reset()
+
+
+}
+
+@enduml
