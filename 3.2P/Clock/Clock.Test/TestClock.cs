@@ -1,3 +1,4 @@
+using System.Data;
 using NUnit.Framework;
 
 namespace Clock.Test
@@ -44,6 +45,17 @@ namespace Clock.Test
                 _clock.Tick();
             }
             Assert.AreEqual("01:00:00", _clock.Time);
+        }
+
+        [Test]
+        public void TestTickIncrementOutOfHoursThrowsException()
+        {
+            for (int i = 0; i < 86399; i++)
+            {
+                _clock.Tick();
+            }
+
+            Assert.Throws<InvalidExpressionException>(_clock.Tick);
         }
 
         [Test]
