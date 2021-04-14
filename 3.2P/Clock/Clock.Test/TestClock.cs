@@ -10,9 +10,33 @@ namespace Clock.Test
         }
 
         [Test]
-        public void Test1()
+        public void TestClockInitialise()
         {
             Assert.Pass();
+        }
+
+        [Test]
+        public void TestTickIncrements()
+        {
+           Assert.Pass(); 
+        }
+
+        [Test]
+        public void TestResetClockToZero()
+        {
+           Assert.Pass(); 
+        }
+
+        [Test]
+        public void TestTimeReturnsString()
+        {
+            Assert.Pass();
+        }
+
+        [Test]
+        public void TestTimeStringFormatCorrect()
+        {
+           Assert.Pass(); 
         }
     }
 }
