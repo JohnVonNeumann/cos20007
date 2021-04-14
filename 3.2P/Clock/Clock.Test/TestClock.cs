@@ -22,7 +22,8 @@ namespace Clock.Test
         [Test]
         public void TestTickIncrements()
         {
-           Assert.Pass(); 
+           _clock.Tick();
+           Assert.AreEqual("00:00:01", _clock.Time);
         }
 
         [Test]
