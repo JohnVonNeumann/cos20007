@@ -59,6 +59,14 @@ namespace ShapeDrawer
             }
         }
         
+        public void DeleteShapes(List<Shape> shapes)
+        {
+            foreach (var shape in shapes)
+            {
+                _shapes.Remove(shape);
+            }
+        }
+        
         public Color Background
         {
             get
