@@ -25,6 +25,15 @@ namespace Clock
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// <c></c>
+        /// property <code> Time </code>
+        /// <remarks> Originally used a String.format but Rider complained about it.
+        ///           Since found out that apparently in certain situations the interpolation
+        ///           is managed at compile time so could have a perf boost
+        /// </remarks>
+        /// <returns> A string containing the current time of the clock</returns>
+        /// </summary>
         public string Time
         {
             get
