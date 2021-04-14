@@ -72,7 +72,7 @@ namespace Clock.Test
         [Test]
         public void TestTimeReturnsString()
         {
-            Assert.Pass();
+            Assert.IsInstanceOf<string>(_clock.Time);
         }
 
         [Test]
