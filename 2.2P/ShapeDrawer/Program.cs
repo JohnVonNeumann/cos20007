@@ -24,6 +24,12 @@ namespace ShapeDrawer
                 {
                     drawing.Background = Color.RandomRGB(255);
                 }
+
+                if (SplashKit.MouseClicked(MouseButton.RightButton))
+                {
+                    drawing.SelectShapesAt(SplashKit.MousePosition());
+                }
+
                 drawing.Draw();
                 SplashKit.RefreshScreen();
             } while (!SplashKit.WindowCloseRequested("Shape Drawer"));
