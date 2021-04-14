@@ -15,7 +15,13 @@ namespace Clock
             _minute = new Counter("minute");
             _second = new Counter("second");
         }
-
+        
+        /// <summary>
+        /// method <code> Tick </code>
+        /// Increments the 3 Counter objects that make up a Clock (Hour:Minute:Second).
+        /// <remarks> I hate the implementation of the nested if statement, I want to make it cleaner. </remarks>
+        /// </summary>
+        /// <exception cref="InvalidExpressionException"></exception>
         public void Tick()
         {
             if (_second.Ticks == 59)
