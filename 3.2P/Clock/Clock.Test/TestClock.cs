@@ -4,15 +4,19 @@ namespace Clock.Test
 {
     public class TestClock
     {
+        private Clock _clock;
+
         [SetUp]
         public void Setup()
         {
+            _clock = new Clock();
         }
 
         [Test]
         public void TestClockInitialise()
         {
-            Assert.Pass();
+            string time = _clock.Time;
+            Assert.AreEqual("00:00:00", time);
         }
 
         [Test]
