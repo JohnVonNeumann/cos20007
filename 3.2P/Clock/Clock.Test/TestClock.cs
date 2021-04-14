@@ -37,6 +37,16 @@ namespace Clock.Test
         }
 
         [Test]
+        public void TestTickIncrementsHours()
+        {
+            for (int i = 0; i < 3600; i++)
+            {
+                _clock.Tick();
+            }
+            Assert.AreEqual("01:00:00", _clock.Time);
+        }
+
+        [Test]
         public void TestResetClockToZero()
         {
            Assert.Pass(); 
