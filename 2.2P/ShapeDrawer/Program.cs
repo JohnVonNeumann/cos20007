@@ -30,6 +30,12 @@ namespace ShapeDrawer
                     drawing.SelectShapesAt(SplashKit.MousePosition());
                 }
 
+                if (SplashKit.KeyTyped(KeyCode.BackspaceKey))
+                {
+                    drawing.SelectShapesAt(SplashKit.MousePosition());
+                    drawing.DeleteShapes(drawing.SelectedShapes);
+                }
+
                 drawing.Draw();
                 SplashKit.RefreshScreen();
             } while (!SplashKit.WindowCloseRequested("Shape Drawer"));
