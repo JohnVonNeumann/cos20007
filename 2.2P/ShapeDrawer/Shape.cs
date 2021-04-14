@@ -123,6 +123,10 @@ namespace ShapeDrawer
         /// </summary>
         public void Draw()
         {
+            if (_selected is true)
+            {
+                DrawOutline();
+            }
             SplashKit.FillRectangle(_color, _x, _y, _width, _height);
         }
 
