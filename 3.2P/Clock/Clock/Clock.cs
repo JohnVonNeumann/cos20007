@@ -1,3 +1,5 @@
+using System;
+
 namespace Clock
 {
     public class Clock
@@ -15,12 +17,12 @@ namespace Clock
 
         public void Tick()
         {
-            
+            throw new NotImplementedException();
         }
 
         public void Reset()
         {
-            
+            throw new NotImplementedException();
         }
 
         public string Time
