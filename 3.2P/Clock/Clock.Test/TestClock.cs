@@ -61,7 +61,12 @@ namespace Clock.Test
         [Test]
         public void TestResetClockToZero()
         {
-           Assert.Pass(); 
+            for (int i = 0; i < 2156; i++)
+            {
+                _clock.Tick();
+            }
+            _clock.Reset();
+            Assert.AreEqual("00:00:00", _clock.Time);
         }
 
         [Test]
