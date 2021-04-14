@@ -4,9 +4,17 @@ namespace Clock
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Clock clock = new Clock();
+
+            for (int i = 0; i < 82245; i++)
+            {
+                clock.Tick();
+            }
+
+            Console.WriteLine("Should output: 22:50:45");
+            Console.WriteLine(clock.Time);
         }
     }
 }
