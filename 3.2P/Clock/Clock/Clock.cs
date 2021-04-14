@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 
 namespace Clock
 {
@@ -17,7 +18,30 @@ namespace Clock
 
         public void Tick()
         {
-            throw new NotImplementedException();
+            if (_second.Ticks == 59)
+            {
+                _second.Reset();
+                if (_minute.Ticks == 59)
+                {
+                    _minute.Reset();
+                    if (_hour.Ticks == 23)
+                    {
+                        throw new InvalidExpressionException("Program can only handle 24 hours.");
+                    }
+                    else
+                    {
+                        _hour.Increment();
+                    }
+                }
+                else
+                {
+                    _minute.Increment();
+                }
+            }
+            else
+            {
+                _second.Increment();
+            }
         }
 
         public void Reset()
