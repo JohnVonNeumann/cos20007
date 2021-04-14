@@ -1,4 +1,5 @@
 using System.Data;
+using System.Text.RegularExpressions;
 using NUnit.Framework;
 
 namespace Clock.Test
@@ -78,7 +79,8 @@ namespace Clock.Test
         [Test]
         public void TestTimeStringFormatCorrect()
         {
-           Assert.Pass(); 
+            Regex regex = new Regex("^([0-2][0-3]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9]+$");
+            Assert.True(regex.IsMatch(_clock.Time));
         }
     }
 }
