@@ -29,7 +29,7 @@ namespace Clock
         {
             get
             {
-                return "Time";
+                return $"{_hour.Ticks:00}:{_minute.Ticks:00}:{_second.Ticks:00}";
             } 
         }
     }
