@@ -20,10 +20,20 @@ namespace Clock.Test
         }
 
         [Test]
-        public void TestTickIncrements()
+        public void TestTickIncrementsSeconds()
         {
            _clock.Tick();
            Assert.AreEqual("00:00:01", _clock.Time);
+        }
+
+        [Test]
+        public void TestTickIncrementsMinutes()
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                _clock.Tick();
+            }
+            Assert.AreEqual("00:01:00", _clock.Time);
         }
 
         [Test]
