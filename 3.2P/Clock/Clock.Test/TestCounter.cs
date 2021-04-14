@@ -43,5 +43,13 @@ namespace Clock.Test
             }
             Assert.AreEqual(newValue, _counter.Ticks);
         }
+
+        [Test]
+        public void TestCounterReset()
+        {
+            _counter.Increment();
+            _counter.Reset();
+            Assert.AreEqual(0, _counter.Ticks);
+        }
     }
 }
