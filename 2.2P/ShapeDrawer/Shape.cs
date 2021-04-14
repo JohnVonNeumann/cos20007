@@ -148,9 +148,9 @@ namespace ShapeDrawer
             return pointWithinRange;
         }
 
-        public void DrawOutline(Shape shape)
+        public void DrawOutline()
         {
-            SplashKit.FillRectangle(
+            SplashKit.DrawRectangle(
                 clr: Color.Black,
                 x: (_x - 2.0),
                 y: (_y - 2.0),
