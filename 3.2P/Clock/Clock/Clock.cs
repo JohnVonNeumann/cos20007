@@ -52,7 +52,9 @@ namespace Clock
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            _hour.Reset();
+            _minute.Reset();
+            _second.Reset();
         }
 
         /// <summary>
