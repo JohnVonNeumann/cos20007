@@ -143,7 +143,7 @@ namespace ShapeDrawer
             double yMax = _y + _height;
             if ((pt.X > _x) && (pt.X < xMax))
             {
-                if ((pt.Y > _x) && (pt.Y < yMax))
+                if ((pt.Y > _y) && (pt.Y < yMax))
                 {
                     pointWithinRange = true;
                 }
