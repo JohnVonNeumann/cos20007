@@ -5,9 +5,9 @@ namespace ShapeDrawer
 {
     public class MyLine : Shape
     {
-        private int _length;
+        private float _length;
 
-        public MyLine(Color color, float x, float y, int length)
+        public MyLine(Color color, float x, float y, int length) : base(color)
         {
             X = x;
             Y = y;
