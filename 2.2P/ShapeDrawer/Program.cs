@@ -32,10 +32,24 @@ namespace ShapeDrawer
 
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
-                    MyRectangle rectangle = new MyRectangle();
-                    rectangle.X = SplashKit.MouseX();
-                    rectangle.Y = SplashKit.MouseY();
-                    drawing.AddShape(rectangle);
+                    Shape newShape;
+
+                    if (kindToAdd == ShapeKind.Circle)
+                    {
+                        MyCircle newCircle = new MyCircle();
+                        newCircle.X = SplashKit.MouseX();
+                        newCircle.Y = SplashKit.MouseY();
+                        newShape = newCircle;
+                    }
+                    else
+                    {
+                        MyRectangle newRect = new MyRectangle();
+                        newRect.X = SplashKit.MouseX();
+                        newRect.Y = SplashKit.MouseY();
+                        newShape = newRect;
+                    }
+
+                    drawing.AddShape(newShape);
                 }
 
                 if (SplashKit.KeyTyped(KeyCode.SpaceKey))
