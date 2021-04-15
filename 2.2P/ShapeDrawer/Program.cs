@@ -19,6 +19,17 @@ namespace ShapeDrawer
             {
                 SplashKit.ProcessEvents();
                 SplashKit.ClearScreen();
+
+                if (SplashKit.KeyTyped(KeyCode.RKey))
+                {
+                    kindToAdd = ShapeKind.Rectangle;
+                }
+
+                if (SplashKit.KeyTyped(KeyCode.CKey))
+                {
+                    kindToAdd = ShapeKind.Circle;
+                }
+
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
                     MyRectangle rectangle = new MyRectangle();
