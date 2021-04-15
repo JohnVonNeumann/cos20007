@@ -6,7 +6,6 @@ namespace ShapeDrawer
     {
         private Color _color;
         private float _x, _y;
-        private int _width, _height;
         private bool _selected;
         
         public Shape()
