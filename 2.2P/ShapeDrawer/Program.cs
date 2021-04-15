@@ -4,6 +4,12 @@ namespace ShapeDrawer
 {
     public class Program
     {
+        private enum ShapeKind
+        {
+            Rectangle,
+            Circle
+        }
+        
         public static void Main()
         {
             Drawing drawing = new Drawing();
