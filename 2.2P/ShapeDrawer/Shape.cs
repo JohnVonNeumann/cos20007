@@ -3,7 +3,7 @@ using SplashKitSDK;
 
 namespace ShapeDrawer
 {
-    public class Shape
+    public abstract class Shape
     {
         private Color _color;
         private float _x, _y;
@@ -91,19 +91,15 @@ namespace ShapeDrawer
         /// <summary>
         /// Method <c>Draw </c> - Simply uses the fields of the Shape to fill a rectangle on the screen.
         /// </summary>
-        public virtual void Draw() {}
+        public abstract void Draw();
 
-        public virtual void DrawOutline() {}
-        
+        public abstract void DrawOutline();
+
         /// <summary>
         /// IsAt - Takes in a Point2D object and states it is within the boundaries of the Shape
         /// </summary>
         /// <param name="pt"> Point2D Object</param>
         /// <returns> boolean - true if the point is within the space of the Shape </returns>
-        public virtual bool IsAt(Point2D pt)
-        {
-            return false;
-        }
-
+        public abstract bool IsAt(Point2D pt);
     }
 }
