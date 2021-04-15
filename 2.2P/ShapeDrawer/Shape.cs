@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -8,12 +9,17 @@ namespace ShapeDrawer
         private float _x, _y;
         private bool _selected;
         
-        public Shape()
+        public Shape(Color color)
         {
-            _color = Color.Green;
+            _color = color;
             _x = 0;
             _y = 0;
             _selected = false;
+        }
+
+        public Shape() : this(Color.Yellow)
+        {
+            
         }
 
         public bool Selected
