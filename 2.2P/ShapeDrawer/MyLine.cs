@@ -43,7 +43,18 @@ namespace ShapeDrawer
 
         public override bool IsAt(Point2D pt)
         {
-            throw new System.NotImplementedException();
+            bool pointWithinRange = false;
+            double xMax = X + _length;
+            double xMin = X;
+            if ((pt.X > xMin) && (pt.X < xMax))
+            {
+                if (Math.Abs(pt.Y - Y) < 5)
+                {
+                    pointWithinRange = true;
+                }
+            }
+
+            return pointWithinRange;
         }
     }
 }
