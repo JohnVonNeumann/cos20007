@@ -36,6 +36,22 @@ namespace ShapeDrawer
                 );
         }
 
+        public override bool IsAt(Point2D pt)
+        {
+            bool pointWithinRange = false;
+            double xMax = X + _width;
+            double yMax = Y + _height;
+            if ((pt.X > X) && (pt.X < xMax))
+            {
+                if ((pt.Y > Y) && (pt.Y < yMax))
+                {
+                    pointWithinRange = true;
+                }
+            }
+
+            return pointWithinRange;
+        }
+
         /// <summary>
         /// property <c> Width </c>
         /// Provides access to the Width field through a getter and setter
