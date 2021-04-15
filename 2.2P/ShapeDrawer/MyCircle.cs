@@ -20,6 +20,15 @@ namespace ShapeDrawer
             SplashKit.FillCircle(Color, X, Y, _radius);
         }
 
+        public override void DrawOutline()
+        {
+            SplashKit.DrawCircle(
+                clr: Color.Black,
+                x: X,
+                y: Y,
+                radius: _radius + 2);
+        }
+
         public int Radius
         {
             get
