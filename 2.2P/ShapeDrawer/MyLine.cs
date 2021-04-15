@@ -18,7 +18,11 @@ namespace ShapeDrawer
 
         public override void Draw()
         {
-            throw new System.NotImplementedException();
+            if (Selected)
+            {
+                DrawOutline();
+            }
+            SplashKit.DrawLine(Color, X, Y, (X + _length), Y);
         }
 
         public override void DrawOutline()
