@@ -16,6 +16,15 @@ namespace ShapeDrawer
 
         public MyRectangle() : this(Color.Green, 0, 0, 100, 100) {}
 
+        public override void Draw()
+        {
+            if (Selected)
+            {
+                DrawOutline();
+            }
+            SplashKit.FillRectangle(Color, X, Y, Width, Height);
+        }
+
         /// <summary>
         /// property <c> Width </c>
         /// Provides access to the Width field through a getter and setter
