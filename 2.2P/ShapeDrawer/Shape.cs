@@ -100,21 +100,9 @@ namespace ShapeDrawer
         /// </summary>
         /// <param name="pt"> Point2D Object</param>
         /// <returns> boolean - true if the point is within the space of the Shape </returns>
-        public bool IsAt(Point2D pt)
+        public virtual bool IsAt(Point2D pt)
         {
-            // X and Y are defined as the "distance from the left/top of the window or bitmap"
-            bool pointWithinRange = false;
-            double xMax = _x + _width;
-            double yMax = _y + _height;
-            if ((pt.X > _x) && (pt.X < xMax))
-            {
-                if ((pt.Y > _y) && (pt.Y < yMax))
-                {
-                    pointWithinRange = true;
-                }
-            }
-
-            return pointWithinRange;
+            return false;
         }
 
     }
