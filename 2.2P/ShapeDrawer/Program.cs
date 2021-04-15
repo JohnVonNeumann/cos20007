@@ -14,10 +14,10 @@ namespace ShapeDrawer
                 SplashKit.ClearScreen();
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
-                    Shape myShape = new Shape();
-                    myShape.X = SplashKit.MouseX();
-                    myShape.Y = SplashKit.MouseY();
-                    drawing.AddShape(myShape);
+                    MyRectangle rectangle = new MyRectangle();
+                    rectangle.X = SplashKit.MouseX();
+                    rectangle.Y = SplashKit.MouseY();
+                    drawing.AddShape(rectangle);
                 }
 
                 if (SplashKit.KeyTyped(KeyCode.SpaceKey))
