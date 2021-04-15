@@ -91,15 +91,10 @@ namespace ShapeDrawer
         /// <summary>
         /// Method <c>Draw </c> - Simply uses the fields of the Shape to fill a rectangle on the screen.
         /// </summary>
-        public virtual void Draw()
-        {
-            if (_selected is true)
-            {
-                DrawOutline();
-            }
-            SplashKit.FillRectangle(_color, _x, _y, _width, _height);
-        }
+        public virtual void Draw() {}
 
+        public virtual void DrawOutline() {}
+        
         /// <summary>
         /// IsAt - Takes in a Point2D object and states it is within the boundaries of the Shape
         /// </summary>
@@ -122,14 +117,5 @@ namespace ShapeDrawer
             return pointWithinRange;
         }
 
-        public virtual void DrawOutline()
-        {
-            SplashKit.DrawRectangle(
-                clr: Color.Black,
-                x: (_x - 2.0),
-                y: (_y - 2.0),
-                width: (_width + 4.0),
-                height: (_height + 4.0));
-        }
     }
 }
