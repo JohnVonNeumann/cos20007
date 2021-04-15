@@ -25,6 +25,17 @@ namespace ShapeDrawer
             SplashKit.FillRectangle(Color, X, Y, Width, Height);
         }
 
+        public override void DrawOutline()
+        {
+            SplashKit.DrawRectangle(
+                clr: Color.Black,
+                x: (X - 2),
+                y: (Y - 2),
+                width: (Width + 4),
+                height: (Height + 4)
+                );
+        }
+
         /// <summary>
         /// property <c> Width </c>
         /// Provides access to the Width field through a getter and setter
