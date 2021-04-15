@@ -27,7 +27,18 @@ namespace ShapeDrawer
 
         public override void DrawOutline()
         {
-            throw new System.NotImplementedException();
+            SplashKit.DrawCircle(
+                clr: Color.Red,
+                x: X,
+                y: Y,
+                radius: 5
+                );
+            SplashKit.DrawCircle(
+                clr: Color.Red,
+                x: (X + _length),
+                y: Y,
+                radius: 5
+                );
         }
 
         public override bool IsAt(Point2D pt)
