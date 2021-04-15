@@ -121,7 +121,7 @@ namespace ShapeDrawer
         /// <summary>
         /// Method <c>Draw </c> - Simply uses the fields of the Shape to fill a rectangle on the screen.
         /// </summary>
-        public void Draw()
+        public virtual void Draw()
         {
             if (_selected is true)
             {
@@ -152,7 +152,7 @@ namespace ShapeDrawer
             return pointWithinRange;
         }
 
-        public void DrawOutline()
+        public virtual void DrawOutline()
         {
             SplashKit.DrawRectangle(
                 clr: Color.Black,
