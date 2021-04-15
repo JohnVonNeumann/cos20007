@@ -1,10 +1,21 @@
+using SplashKitSDK;
+
 namespace ShapeDrawer
 {
     public class MyRectangle : Shape
     {
         private int _width, _height;
-        
-        
+
+        public MyRectangle(Color color, float x, float y, int width, int height) : base(color)
+        {
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+        }
+
+        public MyRectangle() : this(Color.Green, 0, 0, 100, 100) {}
+
         /// <summary>
         /// property <c> Width </c>
         /// Provides access to the Width field through a getter and setter
