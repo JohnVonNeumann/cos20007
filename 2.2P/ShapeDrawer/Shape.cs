@@ -13,8 +13,6 @@ namespace ShapeDrawer
             _color = Color.Green;
             _x = 0;
             _y = 0;
-            _height = 100;
-            _width = 100;
             _selected = false;
         }
 
