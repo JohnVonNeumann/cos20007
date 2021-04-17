@@ -11,7 +11,11 @@ namespace SwinAdventure.Test
         [SetUp]
         public void Setup()
         {
-            _itemObject = new ItemObject(idents, "Frostmourne", "Frostmourne was the fearsome, rune-inscribed two-handed longsword of the Lich King.");
+            _itemObject = new ItemObject(
+                idents, 
+                "Frostmourne", 
+                "Frostmourne was the fearsome, rune-inscribed two-handed longsword of the Lich King."
+                );
         }
 
         [Test]
@@ -26,5 +30,13 @@ namespace SwinAdventure.Test
             Assert.AreEqual("Frostmourne Frostmourne", _itemObject.ShortDescription);
         }
         
+        [Test]
+        public void TestLongDescription()
+        {
+            Assert.AreEqual(
+                "Frostmourne was the fearsome, rune-inscribed two-handed longsword of the Lich King.", 
+                _itemObject.FullDescription
+                );
+        }
     }
 }
