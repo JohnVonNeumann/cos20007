@@ -34,7 +34,8 @@ namespace SwinAdventure.Test
         [Test]
         public void TestFetchItem()
         {
-            Assert.Pass();
+            _inventory.Put(_item);
+            Assert.AreEqual(_item, _inventory.Fetch("BFG"));
         }
 
         [Test]
