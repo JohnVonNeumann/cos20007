@@ -53,6 +53,12 @@ namespace SwinAdventure.Test
         }
 
         [Test]
+        public void TestTakeNoItem()
+        {
+            Assert.AreEqual(null, _inventory.Take("fail"));
+        }
+
+        [Test]
         public void TestItemList()
         {
             string[] identsGun = {"Weapon", "BFG", "Rocket Launcher"};
