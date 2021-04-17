@@ -11,7 +11,15 @@ namespace SwinAdventure
 
         public bool HasItem(string id)
         {
-            throw new NotImplementedException();
+            foreach (var t in _items)
+            {
+                if (t.FirstId == id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void Put(Item item)
