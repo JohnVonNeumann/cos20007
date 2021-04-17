@@ -34,7 +34,14 @@ namespace SwinAdventure
 
         public Item Fetch(string id)
         {
-            throw new NotImplementedException();
+            foreach (Item item in _items)
+            {
+                if (item.AreYou(id))
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
         public string ItemList
