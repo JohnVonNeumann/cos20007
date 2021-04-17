@@ -52,7 +52,7 @@ namespace SwinAdventure.Test
         [Test]
         public void TestPlayerLocatesItself()
         {
-            Assert.Pass();
+            Assert.AreSame(_player.Inventory.Fetch("me"), _player.Locate("me"));
         }
 
         [Test]
