@@ -52,11 +52,16 @@ namespace SwinAdventure
             return null;
         }
 
-        public string ItemList
+        public string[] ItemList
         {
             get
             {
-                return "Item List";
+                List<string> list = new List<string>();
+                foreach (Item i in _items)
+                {
+                    list.Add(i.ShortDescription);
+                }
+                return list.ToArray();
             }
         }
         
