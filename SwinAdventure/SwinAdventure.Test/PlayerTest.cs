@@ -15,7 +15,7 @@ namespace SwinAdventure.Test
         [Test]
         public void TestPlayerIsIdentifiable()
         {
-            Assert.Pass();
+            Assert.True(_player.AreYou("me"));
         }
 
         [Test]
