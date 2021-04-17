@@ -41,7 +41,9 @@ namespace SwinAdventure.Test
         [Test]
         public void TestTakeItem()
         {
-            Assert.Pass();
+            _inventory.Put(_item);
+            _inventory.Take("BFG");
+            Assert.False(_inventory.HasItem("BFG"));
         }
 
         [Test]
