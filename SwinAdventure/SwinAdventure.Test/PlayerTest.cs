@@ -4,10 +4,12 @@ namespace SwinAdventure.Test
 {
     public class PlayerTest
     {
+        private Player _player;
+
         [SetUp]
         public void Setup()
         {
-            
+            _player = new Player("John", "Player 1");
         }
 
         [Test]
