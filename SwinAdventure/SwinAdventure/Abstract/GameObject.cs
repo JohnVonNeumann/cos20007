@@ -2,10 +2,10 @@ namespace SwinAdventure.Abstract
 {
     public abstract class GameObject : IdentifiableObject
     {
-        private string _description;
         private string _name;
+        private string _description;
 
-        public GameObject(string[] ids, string name, string description) : base(ids)
+        public GameObject(string name, string description, string[] ids) : base(ids)
         {
             _name = name;
             _description = description;
