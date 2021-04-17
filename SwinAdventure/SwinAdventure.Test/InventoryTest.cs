@@ -11,7 +11,7 @@ namespace SwinAdventure.Test
         public void Setup()
         {
             _inventory = new Inventory();
-            string[] idents = new[] {"BFG"};
+            string[] idents = {"BFG"};
             _item = new Item(idents,
                 "Big Friggin' Gun",
                 "The biggest gun available in the game"
