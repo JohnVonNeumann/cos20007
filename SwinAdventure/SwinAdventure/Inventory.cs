@@ -16,7 +16,7 @@ namespace SwinAdventure
 
         public void Put(Item item)
         {
-            throw new NotImplementedException();
+            _items.Add(item);
         }
 
         public Item Take(string id)
