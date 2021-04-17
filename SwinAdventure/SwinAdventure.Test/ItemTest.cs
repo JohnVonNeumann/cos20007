@@ -19,6 +19,12 @@ namespace SwinAdventure.Test
         {
             Assert.True(_itemObject.AreYou(id: "Frostmourne"));
         }
+
+        [Test]
+        public void TestShortDescription()
+        {
+            Assert.AreEqual("Frostmourne Frostmourne", _itemObject.ShortDescription);
+        }
         
     }
 }
