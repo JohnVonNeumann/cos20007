@@ -44,7 +44,9 @@ namespace SwinAdventure.Test
         [Test]
         public void TestPlayerLocatesItems()
         {
-            Assert.Pass();
+            Assert.AreSame(_player.Inventory.Fetch("Weapon"), _player.Locate("Weapon"));
+            Assert.AreSame(_player.Inventory.Fetch("Armour"), _player.Locate("Armour"));
+            Assert.AreSame(_player.Inventory.Fetch("Food"), _player.Locate("Food"));
         }
 
         [Test]
