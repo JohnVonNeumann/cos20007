@@ -30,7 +30,7 @@ namespace SwinAdventure
         {
             get
             {
-                throw new NotImplementedException();
+                return _inventory;
             }
         }
     }
