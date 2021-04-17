@@ -38,6 +38,7 @@ namespace SwinAdventure.Test
         public void TestPlayerIsIdentifiable()
         {
             Assert.True(_player.AreYou("me"));
+            Assert.True(_player.AreYou("inventory"));
         }
 
         [Test]
