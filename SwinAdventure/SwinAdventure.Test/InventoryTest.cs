@@ -21,7 +21,8 @@ namespace SwinAdventure.Test
         [Test]
         public void TestFindItem()
         {
-            Assert.Pass();
+            _inventory.Put(_item);
+            Assert.True(_inventory.HasItem("BFG"));
         }
 
         [Test]
