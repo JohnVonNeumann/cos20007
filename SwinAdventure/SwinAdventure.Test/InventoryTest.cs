@@ -4,10 +4,18 @@ namespace SwinAdventure.Test
 {
     public class InventoryTest
     {
+        private Inventory _inventory;
+        private Item _item;
+
         [SetUp]
         public void Setup()
         {
-            Inventory inventory = new Inventory();
+            _inventory = new Inventory();
+            string[] idents = new[] {"BFG"};
+            _item = new Item(idents,
+                "Big Friggin' Gun",
+                "The biggest gun available in the game"
+                );
         }
 
         [Test]
