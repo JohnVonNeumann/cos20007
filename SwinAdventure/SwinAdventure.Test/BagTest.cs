@@ -11,5 +11,35 @@ namespace SwinAdventure.Test
         {
             _bag = new Bag();
         }
+
+        [Test]
+        public void TestBagLocatesItems()
+        {
+            Assert.Pass();
+        }
+        
+        [Test]
+        public void TestBagLocatesItself()
+        {
+            Assert.Pass();
+        }
+        
+        [Test]
+        public void TestBagLocatesNothing()
+        {
+            Assert.Pass();
+        }
+        
+        [Test]
+        public void TestBagFullDescription()
+        {
+            Assert.Pass();
+        }
+        
+        [Test]
+        public void TestBagInBag()
+        {
+            Assert.Pass();
+        }
     }
 }
