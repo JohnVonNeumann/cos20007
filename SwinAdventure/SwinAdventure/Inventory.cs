@@ -29,7 +29,15 @@ namespace SwinAdventure
 
         public Item Take(string id)
         {
-            throw new NotImplementedException();
+            foreach (Item item in _items)
+            {
+                if (item.AreYou(id))
+                {
+                    _items.Remove(item);
+                    return item;
+                }
+            }
+            return null;
         }
 
         public Item Fetch(string id)
