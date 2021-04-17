@@ -22,7 +22,7 @@ namespace SwinAdventure
         {
             get
             {
-                return "Full Description";
+                return $"You are carrying:\n" + _inventory.ItemList;
             }
         }
 
