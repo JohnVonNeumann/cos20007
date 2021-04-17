@@ -15,7 +15,7 @@ namespace SwinAdventure
 
         public GameObject Locate(string id)
         {
-            throw new NotImplementedException();
+            return _inventory.Fetch(id);
         }
 
         public override string FullDescription
