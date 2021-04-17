@@ -83,12 +83,7 @@ namespace SwinAdventure.Test
             _inventory.Put(armour);
             _inventory.Put(food);
 
-            string[] expected =
-            {
-                "Big Friggin Gun - Weapon",
-                "Illidan's Plated Glory - Armour",
-                "Kiwifruit Pie - Food"
-            };
+            string expected = "Big Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n";
 
             Assert.AreEqual(expected, _inventory.ItemList);
         }
