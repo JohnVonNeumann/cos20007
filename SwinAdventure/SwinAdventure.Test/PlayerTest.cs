@@ -58,7 +58,7 @@ namespace SwinAdventure.Test
         [Test]
         public void TestPlayerLocatesNothing()
         {
-            Assert.Pass();
+            Assert.AreEqual(null, _player.Locate("fail"));
         }
 
         [Test]
