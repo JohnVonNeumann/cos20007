@@ -5,13 +5,13 @@ namespace SwinAdventure.Test
 {
     public class ItemTests
     {
-        private ItemObject _itemObject;
+        private Item _itemObject;
         private string[] idents = new []{"Frostmourne", "Sword of the Lich King"};
 
         [SetUp]
         public void Setup()
         {
-            _itemObject = new ItemObject(
+            _itemObject = new Item(
                 idents, 
                 "Frostmourne", 
                 "Frostmourne was the fearsome, rune-inscribed two-handed longsword of the Lich King."
