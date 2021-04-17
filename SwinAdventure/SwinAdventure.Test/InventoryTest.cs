@@ -39,6 +39,12 @@ namespace SwinAdventure.Test
         }
 
         [Test]
+        public void TestFetchNoItem()
+        {
+            Assert.AreEqual(null, _inventory.Fetch("fail"));
+        }
+
+        [Test]
         public void TestTakeItem()
         {
             _inventory.Put(_item);
