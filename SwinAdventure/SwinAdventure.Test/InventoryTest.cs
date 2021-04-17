@@ -28,7 +28,7 @@ namespace SwinAdventure.Test
         [Test]
         public void TestNoItemFind()
         {
-            Assert.Pass();
+            Assert.False(_inventory.HasItem("Nope.avi"));
         }
 
         [Test]
