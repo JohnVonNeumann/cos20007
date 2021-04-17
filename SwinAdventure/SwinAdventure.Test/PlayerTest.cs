@@ -64,7 +64,9 @@ namespace SwinAdventure.Test
         [Test]
         public void TestPlayerFullDescription()
         {
-            Assert.Pass();
+            Assert.AreEqual(
+                "You are carrying:\nBig Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n",
+                _player.FullDescription);
         }
     }
 }
