@@ -11,9 +11,9 @@ namespace SwinAdventure
 
         public bool HasItem(string id)
         {
-            foreach (var t in _items)
+            foreach (Item item in _items)
             {
-                if (t.FirstId == id)
+                if (item.AreYou(id))
                 {
                     return true;
                 }
