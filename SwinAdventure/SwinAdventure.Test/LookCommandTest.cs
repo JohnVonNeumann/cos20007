@@ -86,7 +86,15 @@ namespace SwinAdventure.Test
         [Test]
         public void TestInvalidLook()
         {
-            Assert.Pass();
+            Assert.AreEqual(
+                "I don't know how to look like that",
+                _lookCommand.Execute(_player, new []{"look"}));
+            Assert.AreEqual(
+                "I don't know how to look like that",
+                _lookCommand.Execute(_player, new []{"look around"}));
+            Assert.AreEqual(
+                "I don't know how to look like that",
+                _lookCommand.Execute(_player, new []{"look around at fails"}));
         }
     }
 }
