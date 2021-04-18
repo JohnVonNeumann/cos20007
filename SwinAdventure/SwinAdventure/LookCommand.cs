@@ -11,7 +11,12 @@ namespace SwinAdventure
 
         public override string Execute(Player p, string[] text)
         {
-            throw new NotImplementedException();
+            if (text.Length != (3 | 5))
+            {
+                return "I don't know how to look like that";
+            }
+
+            return "Success";
         }
 
         public IHaveInventory FetchContainer(Player p, string containerId)
