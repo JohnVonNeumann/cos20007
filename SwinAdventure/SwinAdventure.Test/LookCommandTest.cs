@@ -88,13 +88,38 @@ namespace SwinAdventure.Test
         {
             Assert.AreEqual(
                 "I don't know how to look like that",
-                _lookCommand.Execute(_player, new []{"look"}));
+                _lookCommand.Execute(_player, new[] {"look"}),
+                "Length must be 3 or 5, not 1.");
+
             Assert.AreEqual(
                 "I don't know how to look like that",
-                _lookCommand.Execute(_player, new []{"look around"}));
+                _lookCommand.Execute(_player, new[] {"look", "around"}),
+                "Length must be 3 or 5, not 2.");
+
             Assert.AreEqual(
                 "I don't know how to look like that",
-                _lookCommand.Execute(_player, new []{"look around at fails"}));
+                _lookCommand.Execute(_player, new[] {"look", "around", "at", "fails"}),
+                "Length must be 3 or 5, not 4.");
+
+            Assert.AreEqual(
+                "Error in look input",
+                _lookCommand.Execute(_player, new[] {"jump", "around", "hall", "still", "fails"}),
+                "First word must be 'look'.");
+
+            Assert.AreEqual(
+                "Error in look input",
+                _lookCommand.Execute(_player, new[] {"jump", "around", "hall"}),
+                "First word must be 'look'.");
+
+            Assert.AreEqual(
+                "What do you want to look at?",
+                _lookCommand.Execute(_player, new[] {"look", "around", "hall"}),
+                "Second word must be 'at'.");
+
+            Assert.AreEqual(
+                "What do you want to look in?",
+                _lookCommand.Execute(_player, new[] {"look", "at", "sword", "towards", "bag"}),
+                "4th word must be 'in'.");
         }
     }
 }
