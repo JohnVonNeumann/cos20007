@@ -5,6 +5,9 @@ namespace SwinAdventure.Test
     public class PlayerTest
     {
         private Player _player;
+        private Item _weapon;
+        private Item _armour;
+        private Item _food;
 
         [SetUp]
         public void Setup()
@@ -12,26 +15,26 @@ namespace SwinAdventure.Test
             _player = new Player("John", "Player 1");
 
             string[] identsGun = {"Weapon", "BFG", "Rocket Launcher"};
-            Item weapon = new Item(identsGun,
+            _weapon = new Item(identsGun,
                 "Big Friggin Gun",
                 "The biggest gun available in the game"
             );
 
             string[] identsArmour = {"Armour", "Platemail", "Heavy Armour"};
-            Item armour = new Item(identsArmour,
+            _armour = new Item(identsArmour,
                 "Illidan's Plated Glory",
                 "Tier 9 Epic Plate Mail"
             );
 
             string[] identsConsumables = {"Food", "Consumable", "Health Regeneration"};
-            Item food = new Item(identsConsumables,
+            _food = new Item(identsConsumables,
                 "Kiwifruit Pie",
                 "Heals Player on consumption for 2000 hp over 12 seconds"
             );
 
-            _player.Inventory.Put(weapon);
-            _player.Inventory.Put(armour);
-            _player.Inventory.Put(food);
+            _player.Inventory.Put(_weapon);
+            _player.Inventory.Put(_armour);
+            _player.Inventory.Put(_food);
         }
 
         [Test]
@@ -44,15 +47,15 @@ namespace SwinAdventure.Test
         [Test]
         public void TestPlayerLocatesItems()
         {
-            Assert.AreSame(_player.Inventory.Fetch("Weapon"), _player.Locate("Weapon"));
-            Assert.AreSame(_player.Inventory.Fetch("Armour"), _player.Locate("Armour"));
-            Assert.AreSame(_player.Inventory.Fetch("Food"), _player.Locate("Food"));
+            Assert.AreSame(_weapon, _player.Locate("Weapon"));
+            Assert.AreSame(_armour, _player.Locate("Armour"));
+            Assert.AreSame(_food, _player.Locate("Food"));
         }
 
         [Test]
         public void TestPlayerLocatesItself()
         {
-            Assert.AreSame(_player.Inventory.Fetch("me"), _player.Locate("me"));
+            Assert.AreSame(_player, _player.Locate("me"));
         }
 
         [Test]
