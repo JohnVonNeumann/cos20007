@@ -56,7 +56,7 @@ namespace SwinAdventure.Test
         [Test]
         public void TestBagLocatesNothing()
         {
-            Assert.Pass();
+            Assert.AreSame(null, _bag.Locate("fail"));
         }
         
         [Test]
