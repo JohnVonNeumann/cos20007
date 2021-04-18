@@ -22,11 +22,11 @@ namespace SwinAdventure
             return _inventory.Fetch(id);
         }
 
-        public string FullDescription
+        public override string FullDescription
         {
             get
             {
-                return "FullDescription";
+                return $"In the {this.Name} you can see:\n" + _inventory.ItemList;
             }
         }
 
