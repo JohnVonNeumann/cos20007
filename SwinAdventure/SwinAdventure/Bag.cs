@@ -3,11 +3,12 @@ using SwinAdventure.Abstract;
 
 namespace SwinAdventure
 {
-    public class Bag
+    public class Bag : Item
     {
         private Inventory _inventory;
         
-        public Bag(string[] ids, string name, string description)
+        public Bag(string[] ids, string name, string description) :
+            base(ids, name, description)
         {
             throw new NotImplementedException();
         }
