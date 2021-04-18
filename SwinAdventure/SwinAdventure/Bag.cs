@@ -10,7 +10,7 @@ namespace SwinAdventure
         public Bag(string[] ids, string name, string description) :
             base(ids, name, description)
         {
-            throw new NotImplementedException();
+            _inventory = new Inventory();
         }
 
         public GameObject Locate(string id)
