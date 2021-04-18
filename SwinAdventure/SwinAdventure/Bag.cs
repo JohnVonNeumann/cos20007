@@ -15,7 +15,11 @@ namespace SwinAdventure
 
         public GameObject Locate(string id)
         {
-            throw new NotImplementedException();
+            if (AreYou(id))
+            {
+                return this;
+            }
+            return _inventory.Fetch(id);
         }
 
         public string FullDescription
