@@ -44,7 +44,14 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLookAtMe()
         {
-            Assert.Pass();
+            _player.Inventory.Put(_weapon);
+            _player.Inventory.Put(_armour);
+            _player.Inventory.Put(_food);
+            string[] input = new[] {"look", "at", "inventory"};
+            _lookCommand.Execute(_player, input);
+            Assert.AreEqual(
+                "You are carrying:\nBig Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n",
+                _lookCommand.Execute(_player, input));
         }
 
         [Test]
