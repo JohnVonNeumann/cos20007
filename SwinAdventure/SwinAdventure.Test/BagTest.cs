@@ -5,6 +5,7 @@ namespace SwinAdventure.Test
     public class BagTest
     {
         private Bag _bag;
+        private Bag _bagBag;
         private Item _weapon;
         private Item _armour;
         private Item _food;
@@ -14,6 +15,10 @@ namespace SwinAdventure.Test
         {
             string[] idents = new[] {"bag", "backpack"};
             _bag = new Bag(idents, "Netherweave Bag", "A hand crafted elven bag.");
+
+            string[] identsBagBag = new[] {"Frostweave Bag"};
+            _bagBag = new Bag(identsBagBag, "Frostweave Bag", "A magical bag from the Blood Elves.");
+
             string[] identsGun = {"Weapon", "BFG", "Rocket Launcher"};
             _weapon = new Item(identsGun,
                 "Big Friggin Gun",
@@ -74,7 +79,8 @@ namespace SwinAdventure.Test
         [Test]
         public void TestBagInBag()
         {
-            Assert.Pass();
+            _bag.Inventory.Put(_bagBag);
+            Assert.AreSame(_bagBag, _bag.Locate("Frostweave Bag"));
         }
     }
 }
