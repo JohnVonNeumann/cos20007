@@ -10,6 +10,7 @@ namespace SwinAdventure.Test
         private Item _weapon;
         private Item _armour;
         private Item _food;
+        private Item _gem;
 
         [SetUp]
         public void Setup()
@@ -39,6 +40,12 @@ namespace SwinAdventure.Test
                 "Kiwifruit Pie",
                 "Heals Player on consumption for 2000 hp over 12 seconds"
             );
+
+            _gem = new Item(
+                new string[] {"gem"},
+                "Eye of Azeroth",
+                "Enables smiting of Alliance scum regardless of PvP status."
+            );
         }
 
         [Test]
@@ -57,7 +64,11 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLookAtGem()
         {
-            Assert.Pass();
+            _player.Inventory.Put(_gem);
+            string[] input = new[] {"look", "at", "gem"};
+            Assert.AreEqual(
+                "Enables smiting of Alliance scum regardless of PvP status.",
+                _lookCommand.Execute(_player, input));
         }
 
         [Test]
