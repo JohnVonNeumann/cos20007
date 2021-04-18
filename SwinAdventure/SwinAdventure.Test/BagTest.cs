@@ -37,7 +37,13 @@ namespace SwinAdventure.Test
         [Test]
         public void TestBagLocatesItems()
         {
-            Assert.Pass();
+            _bag.Inventory.Put(_weapon);
+            _bag.Inventory.Put(_armour);
+            _bag.Inventory.Put(_food);
+
+            Assert.AreSame(_weapon, _bag.Locate("weapon"));
+            Assert.AreSame(_armour, _bag.Locate("armour"));
+            Assert.AreSame(_food, _bag.Locate("food"));
         }
         
         [Test]
