@@ -22,7 +22,8 @@ namespace SwinAdventure.Test
         [Test]
         public void TestBagLocatesItself()
         {
-            Assert.Pass();
+            Assert.AreSame(_bag, _bag.Locate("bag"));
+            Assert.AreSame(_bag, _bag.Locate("backpack"));
         }
         
         [Test]
