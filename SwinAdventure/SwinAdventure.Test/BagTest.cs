@@ -58,11 +58,17 @@ namespace SwinAdventure.Test
         {
             Assert.AreSame(null, _bag.Locate("fail"));
         }
-        
+
         [Test]
         public void TestBagFullDescription()
         {
-            Assert.Pass();
+            _bag.Inventory.Put(_weapon);
+            _bag.Inventory.Put(_armour);
+            _bag.Inventory.Put(_food);
+
+            Assert.AreEqual(
+                $"In the Netherweave Bag you can see:\nBig Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n",
+                _bag.FullDescription);
         }
         
         [Test]
