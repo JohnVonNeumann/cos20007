@@ -9,7 +9,8 @@ namespace SwinAdventure.Test
         [SetUp]
         public void Setup()
         {
-            _bag = new Bag();
+            string[] idents = new[] {"bag", "backpack"};
+            _bag = new Bag(idents, "Netherweave Bag", "A hand crafted elven bag.");
         }
 
         [Test]
