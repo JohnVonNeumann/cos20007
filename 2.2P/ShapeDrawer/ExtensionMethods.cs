@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using SplashKitSDK;
+
 namespace ShapeDrawer
 {
     public static class ExtensionMethods
