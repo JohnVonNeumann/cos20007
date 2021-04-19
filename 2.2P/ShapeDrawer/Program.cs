@@ -83,6 +83,11 @@ namespace ShapeDrawer
                     drawing.Save("/home/lw/code/university/cos20007/2.2P/ShapeDrawer/TestDrawing.txt");
                 }
 
+                if (SplashKit.KeyTyped(KeyCode.OKey))
+                {
+                    drawing.Load("/home/lw/code/university/cos20007/2.2P/ShapeDrawer/TestDrawing.txt");
+                }
+
                 drawing.Draw();
                 SplashKit.RefreshScreen();
             } while (!SplashKit.WindowCloseRequested("Shape Drawer"));
