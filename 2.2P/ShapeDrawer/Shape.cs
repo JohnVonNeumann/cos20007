@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using SplashKitSDK;
@@ -9,6 +11,7 @@ namespace ShapeDrawer
         private Color _color;
         private float _x, _y;
         private bool _selected;
+        private static Dictionary<string, Type> _shapeClassRegistry = new Dictionary<string, Type>();
         
         public Shape(Color color)
         {
@@ -21,6 +24,16 @@ namespace ShapeDrawer
         public Shape() : this(Color.Yellow)
         {
             
+        }
+
+        public static void RegisterShape(string name, Type t)
+        {
+            _shapeClassRegistry[name] = t;
+        }
+
+        public static Shape CreateShape(string name)
+        {
+            return (Shape) Activator.CreateInstance(_shapeClassRegistry[name]);
         }
 
         public bool Selected
