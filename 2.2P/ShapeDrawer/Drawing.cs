@@ -103,18 +103,7 @@ namespace ShapeDrawer
                 {
                     string kind = reader.ReadLine();
 
-                    switch (kind)
-                    {
-                        case "Rectangle":
-                            s = new MyRectangle();
-                            break;
-                        case "Circle":
-                            s = new MyCircle();
-                            break;
-                        default:
-                            throw new InvalidDataException("Unknown shape kind: " + kind);
-                            continue;
-                    }
+                    s = Shape.CreateShape(kind);
 
                     s.LoadFrom(reader);
                     AddShape(s);
