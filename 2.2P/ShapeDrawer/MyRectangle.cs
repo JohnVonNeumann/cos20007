@@ -1,3 +1,4 @@
+using System.IO;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -50,6 +51,14 @@ namespace ShapeDrawer
             }
 
             return pointWithinRange;
+        }
+
+        public override void SaveTo(StreamWriter writer)
+        {
+            writer.WriteLine("Rectangle");
+            base.SaveTo(writer);
+            writer.WriteLine(_width);
+            writer.WriteLine(_height);
         }
 
         /// <summary>
