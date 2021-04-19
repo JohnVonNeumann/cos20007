@@ -46,7 +46,12 @@ namespace SwinAdventure
 
         public IHaveInventory FetchContainer(Player p, string containerId)
         {
-            throw new NotImplementedException();
+            if (p.AreYou(containerId))
+            {
+                return p;
+            }
+
+            return p;
         }
 
         private string LookAtIn(string thingId, IHaveInventory container)
