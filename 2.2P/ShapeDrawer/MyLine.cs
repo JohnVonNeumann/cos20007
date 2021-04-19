@@ -60,7 +60,6 @@ namespace ShapeDrawer
         
         public override void SaveTo(StreamWriter writer)
         {
-            writer.WriteLine("Line");
             base.SaveTo(writer);
             writer.WriteLine(_length);
         }

@@ -55,7 +55,6 @@ namespace ShapeDrawer
 
         public override void SaveTo(StreamWriter writer)
         {
-            writer.WriteLine("Rectangle");
             base.SaveTo(writer);
             writer.WriteLine(_width);
             writer.WriteLine(_height);
