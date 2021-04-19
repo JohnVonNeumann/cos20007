@@ -123,6 +123,7 @@ namespace ShapeDrawer
 
         public virtual void SaveTo(StreamWriter writer)
         {
+            writer.WriteLine(GetShapeKeyValue(this.GetType()));
             writer.WriteColor(_color);
             writer.WriteLine(_x);
             writer.WriteLine(_y);
