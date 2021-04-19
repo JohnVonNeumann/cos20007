@@ -38,7 +38,7 @@ namespace SwinAdventure
             if (text.Length == 3)
             {
                 string itemToFind = text[2];
-                return p.Locate(itemToFind).FullDescription;
+                return LookAtIn(itemToFind, p as IHaveInventory);
             }
 
             return "Success";
