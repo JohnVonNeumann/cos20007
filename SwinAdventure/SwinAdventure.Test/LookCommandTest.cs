@@ -112,7 +112,11 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLookAtNoGemInBag()
         {
-            Assert.Pass();
+            _player.Inventory.Put(_bag);
+            string[] input = new[] {"look", "at", "gem", "in", "bag"};
+            Assert.AreEqual(
+                "I can't find the gem",
+                _lookCommand.Execute(_player, input));
         }
 
         [Test]
