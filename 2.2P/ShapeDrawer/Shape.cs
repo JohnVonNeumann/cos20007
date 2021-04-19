@@ -36,6 +36,18 @@ namespace ShapeDrawer
             return (Shape) Activator.CreateInstance(_shapeClassRegistry[name]);
         }
 
+        public static string GetShapeKeyValue(Type type)
+        {
+            foreach (string key in _shapeClassRegistry.Keys)
+            {
+                if (_shapeClassRegistry[key] == type)
+                {
+                    return key;
+                }
+            }
+            return null;
+        }
+
         public bool Selected
         {
             get
