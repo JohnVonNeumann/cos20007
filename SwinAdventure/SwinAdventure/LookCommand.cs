@@ -46,6 +46,10 @@ namespace SwinAdventure
                 string itemToFind = text[2];
                 string placeToLookIn = text[4];
                 IHaveInventory container = FetchContainer(p, placeToLookIn);
+                if (container is null)
+                {
+                    return $"I cannot find the {placeToLookIn}";
+                }
                 return LookAtIn(itemToFind, container);
             }
 
