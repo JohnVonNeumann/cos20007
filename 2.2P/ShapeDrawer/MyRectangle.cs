@@ -61,6 +61,13 @@ namespace ShapeDrawer
             writer.WriteLine(_height);
         }
 
+        public override void LoadFrom(StreamReader reader)
+        {
+            base.LoadFrom(reader);
+            _width = reader.ReadInteger();
+            _height = reader.ReadInteger();
+        }
+
         /// <summary>
         /// property <c> Width </c>
         /// Provides access to the Width field through a getter and setter

@@ -64,5 +64,11 @@ namespace ShapeDrawer
             base.SaveTo(writer);
             writer.WriteLine(_length);
         }
+
+        public override void LoadFrom(StreamReader reader)
+        {
+            base.LoadFrom(reader);
+            _length = reader.ReadInteger();
+        }
     }
 }
