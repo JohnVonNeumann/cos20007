@@ -14,6 +14,9 @@ namespace ShapeDrawer
         
         public static void Main()
         {
+            Shape.RegisterShape("Rectangle", typeof(MyRectangle));
+            Shape.RegisterShape("Circle", typeof(MyCircle));
+            Shape.RegisterShape("Line", typeof(MyLine));
             ShapeKind kindToAdd = ShapeKind.Circle;
             Drawing drawing = new Drawing();
             new Window("Shape Drawer", 800, 600);
