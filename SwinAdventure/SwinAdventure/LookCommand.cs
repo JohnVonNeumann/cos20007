@@ -51,7 +51,12 @@ namespace SwinAdventure
 
         private string LookAtIn(string thingId, IHaveInventory container)
         {
-            throw new NotImplementedException();
+            if (container.Locate(thingId) != null)
+            {
+                return container.Locate(thingId).FullDescription;
+            }
+
+            return $"I can't find the {thingId}";
         }
         
     }
