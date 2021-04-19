@@ -73,7 +73,10 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLookAtUnk()
         {
-            Assert.Pass();
+            string[] input = new[] {"look", "at", "gem"};
+            Assert.AreEqual(
+                "I can't find the gem",
+                _lookCommand.Execute(_player, input));
         }
 
         [Test]
