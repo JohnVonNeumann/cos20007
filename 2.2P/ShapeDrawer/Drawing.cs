@@ -79,6 +79,8 @@ namespace ShapeDrawer
             {
                 shape.SaveTo(writer);
             }
+
+            writer.Close();
         }
         
         public Color Background
