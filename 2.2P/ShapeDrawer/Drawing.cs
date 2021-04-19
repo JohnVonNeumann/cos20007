@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using SplashKitSDK;
 
@@ -81,6 +82,38 @@ namespace ShapeDrawer
             }
 
             writer.Close();
+        }
+
+        public void Load(string filename)
+        {
+            StreamReader reader = new StreamReader(filename);
+            Shape s;
+            _background = reader.ReadColor();
+            int count = reader.ReadInteger();
+            
+            _shapes.Clear();
+
+            for (int i = 0; i < count; i++)
+            {
+                string kind = reader.ReadLine();
+
+                switch (kind)
+                {
+                    case "Rectangle":
+                        s = new MyRectangle();
+                        break;
+                    case "Circle":
+                        s = new MyCircle();
+                        break;
+                    default:
+                        continue;
+                }
+                
+                s.LoadFrom(reader);
+                AddShape(s);
+            }
+            
+            reader.Close();
         }
         
         public Color Background
