@@ -41,6 +41,14 @@ namespace SwinAdventure
                 return LookAtIn(itemToFind, p as IHaveInventory);
             }
 
+            if (text.Length == 5)
+            {
+                string itemToFind = text[2];
+                string placeToLookIn = text[4];
+                IHaveInventory container = FetchContainer(p, placeToLookIn);
+                return LookAtIn(itemToFind, container);
+            }
+
             return "Success";
         }
 
