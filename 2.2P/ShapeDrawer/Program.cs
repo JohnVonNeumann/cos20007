@@ -1,3 +1,4 @@
+using System;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -85,7 +86,14 @@ namespace ShapeDrawer
 
                 if (SplashKit.KeyTyped(KeyCode.OKey))
                 {
-                    drawing.Load("/home/lw/code/university/cos20007/2.2P/ShapeDrawer/TestDrawing.txt");
+                    try
+                    {
+                        drawing.Load("/home/lw/code/university/cos20007/2.2P/ShapeDrawer/TestDrawing.txt");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Error.WriteLine("Error loading file: {0}", e.Message);
+                    }
                 }
 
                 drawing.Draw();

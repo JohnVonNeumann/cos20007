@@ -72,48 +72,58 @@ namespace ShapeDrawer
         public void Save(string filename)
         {
             StreamWriter writer = new StreamWriter(filename);
-
-            writer.WriteColor(_background);
-            writer.WriteLine(ShapeCount);
-
-            foreach (Shape shape in _shapes)
+            try
             {
-                shape.SaveTo(writer);
-            }
+                writer.WriteColor(_background);
+                writer.WriteLine(ShapeCount);
 
-            writer.Close();
+                foreach (Shape shape in _shapes)
+                {
+                    shape.SaveTo(writer);
+                }
+            }
+            finally
+            {
+                writer.Close();
+            }
         }
 
         public void Load(string filename)
         {
             StreamReader reader = new StreamReader(filename);
-            Shape s;
-            _background = reader.ReadColor();
-            int count = reader.ReadInteger();
-            
-            _shapes.Clear();
-
-            for (int i = 0; i < count; i++)
+            try
             {
-                string kind = reader.ReadLine();
+                Shape s;
+                _background = reader.ReadColor();
+                int count = reader.ReadInteger();
 
-                switch (kind)
+                _shapes.Clear();
+
+                for (int i = 0; i < count; i++)
                 {
-                    case "Rectangle":
-                        s = new MyRectangle();
-                        break;
-                    case "Circle":
-                        s = new MyCircle();
-                        break;
-                    default:
-                        continue;
+                    string kind = reader.ReadLine();
+
+                    switch (kind)
+                    {
+                        case "Rectangle":
+                            s = new MyRectangle();
+                            break;
+                        case "Circle":
+                            s = new MyCircle();
+                            break;
+                        default:
+                            throw new InvalidDataException("Unknown shape kind: " + kind);
+                            continue;
+                    }
+
+                    s.LoadFrom(reader);
+                    AddShape(s);
                 }
-                
-                s.LoadFrom(reader);
-                AddShape(s);
             }
-            
-            reader.Close();
+            finally
+            {
+                reader.Close();
+            }
         }
         
         public Color Background
