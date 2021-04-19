@@ -103,7 +103,10 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLookAtGemInNoBag()
         {
-            Assert.Pass();
+            string[] input = new[] {"look", "at", "gem", "in", "bag"};
+            Assert.AreEqual(
+                "I cannot find the bag",
+                _lookCommand.Execute(_player, input));
         }
 
         [Test]
