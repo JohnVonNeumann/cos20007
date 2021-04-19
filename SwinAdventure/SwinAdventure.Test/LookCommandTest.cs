@@ -82,7 +82,11 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLookAtGemInMe()
         {
-            Assert.Pass();
+            _player.Inventory.Put(_gem);
+            string[] input = new[] {"look", "at", "gem", "in", "inventory"};
+            Assert.AreEqual(
+                "Enables smiting of Alliance scum regardless of PvP status.",
+                _lookCommand.Execute(_player, input));
         }
 
         [Test]
