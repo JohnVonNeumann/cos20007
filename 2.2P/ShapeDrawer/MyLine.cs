@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -55,6 +56,13 @@ namespace ShapeDrawer
             }
 
             return pointWithinRange;
+        }
+        
+        public override void SaveTo(StreamWriter writer)
+        {
+            writer.WriteLine("Line");
+            base.SaveTo(writer);
+            writer.WriteLine(_length);
         }
     }
 }
