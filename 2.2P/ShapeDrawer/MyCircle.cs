@@ -1,3 +1,4 @@
+using System.IO;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -47,6 +48,13 @@ namespace ShapeDrawer
             } 
                 
             return pointWithinRange;
+        }
+        
+        public override void SaveTo(StreamWriter writer)
+        {
+            writer.WriteLine("Circle");
+            base.SaveTo(writer);
+            writer.WriteLine(_radius);
         }
 
         public int Radius
