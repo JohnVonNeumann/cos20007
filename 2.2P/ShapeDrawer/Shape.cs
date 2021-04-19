@@ -103,6 +103,13 @@ namespace ShapeDrawer
             writer.WriteLine(_y);
         }
 
+        public virtual void LoadFrom(StreamReader reader)
+        {
+            Color = reader.ReadColor();
+            X = reader.ReadInteger();
+            Y = reader.ReadInteger();
+        }
+
         /// <summary>
         /// IsAt - Takes in a Point2D object and states it is within the boundaries of the Shape
         /// </summary>
