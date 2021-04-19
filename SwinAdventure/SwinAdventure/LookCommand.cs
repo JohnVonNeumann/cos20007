@@ -59,7 +59,7 @@ namespace SwinAdventure
                 return p;
             }
 
-            return p;
+            return p.Locate(containerId) as IHaveInventory;
         }
 
         private string LookAtIn(string thingId, IHaveInventory container)
