@@ -78,6 +78,11 @@ namespace ShapeDrawer
                     drawing.DeleteShapes(drawing.SelectedShapes);
                 }
 
+                if (SplashKit.KeyTyped(KeyCode.SKey))
+                {
+                    drawing.Save("/home/lw/code/university/cos20007/2.2P/ShapeDrawer/TestDrawing.txt");
+                }
+
                 drawing.Draw();
                 SplashKit.RefreshScreen();
             } while (!SplashKit.WindowCloseRequested("Shape Drawer"));
