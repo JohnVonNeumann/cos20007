@@ -1,3 +1,4 @@
+using System.IO;
 using System.Runtime.CompilerServices;
 using SplashKitSDK;
 
@@ -94,6 +95,13 @@ namespace ShapeDrawer
         public abstract void Draw();
 
         public abstract void DrawOutline();
+
+        public virtual void SaveTo(StreamWriter writer)
+        {
+            writer.WriteColor(_color);
+            writer.WriteLine(_x);
+            writer.WriteLine(_y);
+        }
 
         /// <summary>
         /// IsAt - Takes in a Point2D object and states it is within the boundaries of the Shape
