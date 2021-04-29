@@ -45,6 +45,11 @@ namespace Library
             {
                 return _onLoan;
             }
+
+            set
+            {
+                _onLoan = value;
+            }
         }
         
     }
