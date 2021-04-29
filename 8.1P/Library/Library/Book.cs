@@ -1,26 +1,16 @@
+using Library.Abstract;
+
 namespace Library
 {
-    public class Book
+    public class Book : LibraryResource 
     {
-        private string _name;
         private string _author;
         private string _isbn;
-        private bool _onLoan;
 
-        public Book(string name, string creator, string isbn)
+        public Book(string name, string creator, string isbn) : base(name)
         {
-            _name = name;
             _author = creator;
             _isbn = isbn;
-            _onLoan = false;
-        }
-
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
         }
 
         public string Creator
@@ -36,19 +26,6 @@ namespace Library
             get
             {
                 return _isbn;
-            }
-        }
-
-        public bool OnLoan
-        {
-            get
-            {
-                return _onLoan;
-            }
-
-            set
-            {
-                _onLoan = value;
             }
         }
 
