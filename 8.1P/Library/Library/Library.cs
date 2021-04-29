@@ -1,48 +1,29 @@
 using System.Collections.Generic;
+using Library.Abstract;
 
 namespace Library
 {
     public class Library
     {
         private string _name;
-        private List<Book> _books;
-        private List<Game> _games;
+        private List<LibraryResource> _resources;
 
         public Library(string name)
         {
             _name = name;
-            _books = new List<Book>();
-            _games = new List<Game>();
+            _resources = new List<LibraryResource>();
         }
 
-        public void AddBook(Book b)
+        public void AddResource(LibraryResource resource)
         {
-            _books.Add(b);
+            _resources.Add(resource);
         }
 
-        public void AddGame(Game g)
+        public bool HasResource(string name)
         {
-            _games.Add(g);
-        }
-
-        public bool HasBook(string name)
-        {
-            foreach (Book book in _books)
+            foreach (LibraryResource resource in _resources)
             {
-                if (book.Name == name)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        public bool HasGame(string name)
-        {
-            foreach (Game game in _games)
-            {
-                if (game.Name == name)
+                if (resource.Name == name)
                 {
                     return true;
                 }
