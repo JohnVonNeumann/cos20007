@@ -7,10 +7,10 @@ namespace Library
         private string _contentRating;
         private bool _onLoan;
 
-        public Game(string name, string developer, string rating)
+        public Game(string name, string creator, string rating)
         {
             _name = name;
-            _developer = developer;
+            _developer = creator;
             _contentRating = rating;
             _onLoan = false;
         }
@@ -23,7 +23,7 @@ namespace Library
             }
         }
 
-        public string Developer
+        public string Creator
         {
             get
             {
