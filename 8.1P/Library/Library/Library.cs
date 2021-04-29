@@ -6,10 +6,16 @@ namespace Library
 {
     public class Library
     {
+        private string _name;
         private List<Book> _books;
         private List<Game> _games;
-        
-        public Library(string name) {}
+
+        public Library(string name)
+        {
+            _name = name;
+            _books = new List<Book>();
+            _games = new List<Game>();
+        }
         
         public void AddBook(Book b) {}
         
