@@ -6,8 +6,14 @@ namespace Library
         private string _developer;
         private string _contentRating;
         private bool _onLoan;
-        
-        public Game(string name, string creator, string rating) {}
+
+        public Game(string name, string developer, string rating)
+        {
+            _name = name;
+            _developer = developer;
+            _contentRating = rating;
+            _onLoan = false;
+        }
 
         public string Name
         {
