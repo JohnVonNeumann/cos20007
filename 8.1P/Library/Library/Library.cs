@@ -23,7 +23,7 @@ namespace Library
         {
             foreach (LibraryResource resource in _resources)
             {
-                if (resource.Name == name)
+                if (resource.Name == name && resource.OnLoan == false)
                 {
                     return true;
                 }
