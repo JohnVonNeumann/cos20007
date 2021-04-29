@@ -9,6 +9,10 @@ namespace Library
 
         public Book(string name, string creator, string isbn)
         {
+            _name = name;
+            _author = creator;
+            _isbn = isbn;
+            _onLoan = false;
         }
 
         public string Name
