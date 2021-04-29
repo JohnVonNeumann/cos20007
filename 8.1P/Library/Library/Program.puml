@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Book <|-- LibraryResource
+Game <|-- LibraryResource
+
+Library *-- LibraryResource
+
+abstract class LibraryResource {
+    - string _name
+    - bool _onLoan
+    
+    + LibraryResource(string name)
+    
+    + string Name 
+    + bool OnLoan
+}
+
+class Library {
+    - string _name
+    - List<LibraryResource> _resources
+    
+    + Library(string name)
+    
+    + void AddResource(LibraryResource resource)
+    + bool HasResource((string name)
+}
+
+class Game {
+    - string _developer
+    - string _contentRating
+    
+    + Game(string name, string creator, string rating)
+    
+    + string Creator 
+    + string ContentRating
+}
+
+class Book {
+    - string _author
+    - string _isbn
+    
+    + Book(string name, string author, string isbn)
+    
+    + string Creator
+    + string ISBN
+}
+@enduml
