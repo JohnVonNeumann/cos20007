@@ -29,13 +29,28 @@ namespace Library
 
         public bool HasBook(string name)
         {
-            throw new NotImplementedException();
+            foreach (Book book in _books)
+            {
+                if (book.Name == name)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
-        
+
         public bool HasGame(string name)
         {
-            throw new NotImplementedException();
+            foreach (Game game in _games)
+            {
+                if (game.Name == name)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
-        
     }
 }
