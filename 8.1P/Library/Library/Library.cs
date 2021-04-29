@@ -16,10 +16,16 @@ namespace Library
             _books = new List<Book>();
             _games = new List<Game>();
         }
-        
-        public void AddBook(Book b) {}
-        
-        public void AddGame(Game g) {}
+
+        public void AddBook(Book b)
+        {
+            _books.Add(b);
+        }
+
+        public void AddGame(Game g)
+        {
+            _games.Add(g);
+        }
 
         public bool HasBook(string name)
         {
