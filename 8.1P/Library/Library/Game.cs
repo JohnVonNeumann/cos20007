@@ -1,26 +1,16 @@
+using Library.Abstract;
+
 namespace Library
 {
-    public class Game
+    public class Game : LibraryResource
     {
-        private string _name;
         private string _developer;
         private string _contentRating;
-        private bool _onLoan;
 
-        public Game(string name, string creator, string rating)
+        public Game(string name, string creator, string rating) : base(name)
         {
-            _name = name;
             _developer = creator;
             _contentRating = rating;
-            _onLoan = false;
-        }
-
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
         }
 
         public string Creator
@@ -38,19 +28,5 @@ namespace Library
                 return _contentRating;
             }
         }
-
-        public bool OnLoan
-        {
-            get
-            {
-                return _onLoan;
-            }
-
-            set
-            {
-                _onLoan = value;
-            }
-        }
-        
     }
 }
