@@ -1,6 +1,6 @@
 class Counter(object):
 
-    def __init__(self, name):
+    def __init__(self, name: str):
         self._count = 0
         self._name = name
 
