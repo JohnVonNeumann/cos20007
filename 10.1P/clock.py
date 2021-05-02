@@ -3,7 +3,7 @@ from counter import Counter
 
 class Clock(object):
 
-    def __init__(self, name: str):
+    def __init__(self):
         self._seconds = Counter("Seconds")
         self._minutes = Counter("Minutes")
         self._hours = Counter("Hours")
