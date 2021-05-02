@@ -14,14 +14,14 @@ class Clock(object):
 
     def tick(self) -> None:
         if (self._seconds.ticks != 59):
-            self._seconds += 1
+            self._seconds.increment()
         else:
             self._seconds.reset()
             if (self._minutes.ticks != 59):
-                self._minutes += 1
+                self._minutes.increment()
             else:
                 self._minutes.reset()
                 if (self._hours.ticks != 23):
-                    self._hours += 1
+                    self._hours.increment()
                 else:
                     raise Exception("Out of time! This clock can only go to 24 hours!")
