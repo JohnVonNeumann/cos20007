@@ -10,7 +10,7 @@ class Clock(object):
 
     @property
     def time(self) -> str:
-        return '{0}:{1}:{2}'.format(self._seconds.ticks, self._minutes.ticks, self._hours.ticks)
+        return '{0:02d}:{1:02d}:{2:02d}'.format(self._hours.ticks, self._minutes.ticks, self._seconds.ticks)
 
     def tick(self) -> None:
         if (self._seconds.ticks != 59):
