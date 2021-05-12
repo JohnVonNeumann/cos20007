@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using SplashKitSDK;
 
@@ -44,18 +43,16 @@ namespace ShapeDrawer
 
         public override bool IsAt(Point2D pt)
         {
-            bool pointWithinRange = false;
-            double xMax = X + _length;
-            double xMin = X;
-            if ((pt.X > xMin) && (pt.X < xMax))
-            {
-                if (Math.Abs(pt.Y - Y) < 5)
-                {
-                    pointWithinRange = true;
-                }
-            }
+            Point2D pointStart = new Point2D();
+            pointStart.X = X;
+            pointStart.Y = Y;
 
-            return pointWithinRange;
+            Point2D pointEnd = new Point2D();
+            pointEnd.X = X + _length;
+            pointEnd.Y = Y;
+
+            Line line = SplashKit.LineFrom(pointStart, pointEnd);
+            return SplashKit.PointOnLine(pt, line);
         }
         
         public override void SaveTo(StreamWriter writer)
