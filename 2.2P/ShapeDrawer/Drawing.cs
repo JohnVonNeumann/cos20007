@@ -51,7 +51,7 @@ namespace ShapeDrawer
                 List<Shape> result = new List<Shape>();
                 foreach (Shape shape in _shapes)
                 {
-                    if (shape.Selected is true)
+                    if (shape.Selected)
                     {
                         result.Add(shape);
                     }
