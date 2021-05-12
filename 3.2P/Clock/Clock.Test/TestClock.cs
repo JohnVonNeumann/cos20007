@@ -49,14 +49,13 @@ namespace Clock.Test
         }
 
         [Test]
-        public void TestTickIncrementOutOfHoursThrowsException()
+        public void TestTickIncrementOutOfHoursLoops()
         {
-            for (int i = 0; i < 86399; i++)
+            for (int i = 0; i < 86401; i++)
             {
                 _clock.Tick();
             }
-
-            Assert.Throws<InvalidExpressionException>(_clock.Tick);
+            Assert.AreEqual("00:00:01", _clock.Time);
         }
 
         [Test]

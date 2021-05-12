@@ -21,7 +21,6 @@ namespace Clock
         /// Increments the 3 Counter objects that make up a Clock (Hour:Minute:Second).
         /// <remarks> I hate the implementation of the nested if statement, I want to make it cleaner. </remarks>
         /// </summary>
-        /// <exception cref="InvalidExpressionException"></exception>
         public void Tick()
         {
             if (_second.Ticks == 59)
@@ -32,7 +31,7 @@ namespace Clock
                     _minute.Reset();
                     if (_hour.Ticks == 23)
                     {
-                        throw new InvalidExpressionException("Program can only handle 24 hours.");
+                        Reset();
                     }
                     else
                     {
