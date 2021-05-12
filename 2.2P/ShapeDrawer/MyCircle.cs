@@ -34,20 +34,11 @@ namespace ShapeDrawer
 
         public override bool IsAt(Point2D pt)
         {
-            bool pointWithinRange = false;
-            double xMax = X + _radius;
-            double xMin = X - _radius;
-            double yMax = Y + _radius;
-            double yMin = Y - _radius;
-            if ((pt.X > xMin) && (pt.X < xMax))
-            {
-                if ((pt.Y > yMin) && (pt.Y < yMax))
-                {
-                    pointWithinRange = true;
-                }    
-            } 
-                
-            return pointWithinRange;
+            Point2D point = new Point2D();
+            point.X = X;
+            point.Y = Y;
+            Circle circle = SplashKit.CircleAt(point, _radius);
+            return SplashKit.PointInCircle(pt, circle);
         }
         
         public override void SaveTo(StreamWriter writer)
