@@ -5,7 +5,7 @@ def main():
 
     clock = Clock()
 
-    for x in range(86400):
+    for x in range(86410):
         clock.tick()
 
     print(clock.time)
