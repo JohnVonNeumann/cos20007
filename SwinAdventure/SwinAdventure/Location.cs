@@ -4,13 +4,13 @@ namespace SwinAdventure
 {
     public class Location : GameObject, IHaveInventory
     {
-        private Inventory _location;
+        private Inventory _items;
         private bool _playerInLocation;
         
         public Location(string name, string description, string[] ids) :
             base(name, description, ids)
         {
-            _location = new Inventory();
+            _items = new Inventory();
         }
 
         public GameObject Locate(string id)
@@ -19,8 +19,15 @@ namespace SwinAdventure
             {
                 return this;
             }
-            return _location.Fetch(id);
-            
+            return _items.Fetch(id);
+        }
+
+        public Inventory Items
+        {
+            get
+            {
+                return _items;
+            }
         }
     }
 }
