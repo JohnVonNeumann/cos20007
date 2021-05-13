@@ -14,24 +14,24 @@ namespace SwinAdventure
         {
             if (!new[] {3, 5}.Contains(text.Length))
             {
-                return "I don't know how to look like that";
+                return "I don't know how to look like that\n";
             }
 
             if (text[0] != "look")
             {
-                return "Error in look input";
+                return "Error in look input\n";
             }
 
             if (text[1] != "at")
             {
-                return "What do you want to look at?";
+                return "What do you want to look at?\n";
             }
 
             if (text.Length == 5)
             {
                 if (text[3] != "in")
                 {
-                    return "What do you want to look in?";
+                    return "What do you want to look in?\n";
                 }
             }
 
@@ -48,7 +48,7 @@ namespace SwinAdventure
                 IHaveInventory container = FetchContainer(p, placeToLookIn);
                 if (container is null)
                 {
-                    return $"I cannot find the {placeToLookIn}";
+                    return $"I cannot find the {placeToLookIn}\n";
                 }
                 return LookAtIn(itemToFind, container);
             }
