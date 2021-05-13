@@ -56,7 +56,7 @@ namespace SwinAdventure.Test
             _player.Inventory.Put(_food);
             string[] input = new[] {"look", "at", "inventory"};
             Assert.AreEqual(
-                "You are carrying:\nBig Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n",
+                "You are Varg The Enflamer\nYou are carrying:\n\tBig Friggin Gun (Weapon)\n\tIllidan's Plated Glory (Armour)\n\tKiwifruit Pie (Food)\n",
                 _lookCommand.Execute(_player, input));
         }
 

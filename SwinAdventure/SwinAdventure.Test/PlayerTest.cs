@@ -68,7 +68,7 @@ namespace SwinAdventure.Test
         public void TestPlayerFullDescription()
         {
             Assert.AreEqual(
-                "You are carrying:\nBig Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n",
+                "You are John Player 1\nYou are carrying:\n\tBig Friggin Gun (Weapon)\n\tIllidan's Plated Glory (Armour)\n\tKiwifruit Pie (Food)\n",
                 _player.FullDescription);
         }
 

@@ -27,7 +27,7 @@ namespace SwinAdventure.Test
         [Test]
         public void TestShortDescription()
         {
-            Assert.AreEqual("Frostmourne - Frostmourne", _itemObject.ShortDescription);
+            Assert.AreEqual("Frostmourne (Frostmourne)", _itemObject.ShortDescription);
         }
         
         [Test]

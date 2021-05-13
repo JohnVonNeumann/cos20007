@@ -23,7 +23,7 @@ namespace SwinAdventure.Abstract
         {
             get
             {
-                return _name + " - " + FirstId;
+                return $"{_name} ({FirstId})";
             }
         }
 

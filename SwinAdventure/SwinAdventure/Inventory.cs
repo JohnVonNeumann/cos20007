@@ -59,7 +59,7 @@ namespace SwinAdventure
                 string itemlist = "";
                 foreach (Item i in _items)
                 {
-                    itemlist += String.Format("{0}\n", i.ShortDescription);
+                    itemlist += $"\t{i.ShortDescription}\n";
                 }
                 return itemlist;
             }

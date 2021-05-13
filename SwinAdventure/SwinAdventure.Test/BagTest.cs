@@ -9,6 +9,7 @@ namespace SwinAdventure.Test
         private Item _weapon;
         private Item _armour;
         private Item _food;
+        private Item _gem;
 
         [SetUp]
         public void Setup()
@@ -35,6 +36,12 @@ namespace SwinAdventure.Test
             _food = new Item(identsConsumables,
                 "Kiwifruit Pie",
                 "Heals Player on consumption for 2000 hp over 12 seconds"
+            );
+            
+            string[] identsGem = {"Gem", "Enhancement"};
+            _gem = new Item(identsGem,
+                "Eye of Azeroth",
+                "Doubles stamina in battlegrounds"
             );
 
         }
@@ -72,7 +79,7 @@ namespace SwinAdventure.Test
             _bag.Inventory.Put(_food);
 
             Assert.AreEqual(
-                $"In the Netherweave Bag you can see:\nBig Friggin Gun - Weapon\nIllidan's Plated Glory - Armour\nKiwifruit Pie - Food\n",
+                $"In the Netherweave Bag you can see:\n\tBig Friggin Gun (Weapon)\n\tIllidan's Plated Glory (Armour)\n\tKiwifruit Pie (Food)\n",
                 _bag.FullDescription);
         }
         
@@ -80,7 +87,10 @@ namespace SwinAdventure.Test
         public void TestBagInBag()
         {
             _bag.Inventory.Put(_bagBag);
+            _bagBag.Inventory.Put(_gem);
             Assert.AreSame(_bagBag, _bag.Locate("Frostweave Bag"));
+            Assert.AreSame(_gem, _bagBag.Locate("Gem"));
+            Assert.AreSame(null, _bag.Locate("Gem"));
         }
     }
 }
