@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Location <|-- GameObject
+Location <|-- IHaveInventory
+
+interface IHaveInventory
+
+abstract GameObject
+
+class Location {
+    - _location Inventory    
+    - _playerInLocation Bool
+    
+    + Location(string[] ids, string name, string desc)
+    + Locate(string id)
+    
+    __ getter __
+    + Name 
+}
+
+
+@enduml
