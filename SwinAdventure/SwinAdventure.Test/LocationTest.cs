@@ -13,7 +13,7 @@ namespace SwinAdventure.Test
         public void Setup()
         {
             string[] identsLocation = {"North"};
-            _location = new Location("North Location", "The direction of North.", identsLocation);
+            _location = new Location("North Location", "The direction of North", identsLocation);
 
             string[] identsGun = {"Weapon", "BFG", "Rocket Launcher"};
             _weapon = new Item(identsGun,
@@ -41,8 +41,41 @@ namespace SwinAdventure.Test
         [Test]
         public void TestLocationIsIdentifiable()
         {
-            Assert.True(_location.AreYou("Hall"));
+            Assert.True(_location.AreYou("North"));
         }
         
+        [Test]
+        public void TestLocationLocatesItems()
+        {
+            Assert.AreSame(_weapon, _location.Locate("Weapon"));
+            Assert.AreSame(_armour, _location.Locate("Armour"));
+            Assert.AreSame(_food, _location.Locate("Food"));
+        }
+
+        [Test]
+        public void TestLocationLocatesItself()
+        {
+            Assert.AreSame(_location, _location.Locate("North"));
+        }
+
+        [Test]
+        public void TestLocationLocatesNothing()
+        {
+            Assert.AreEqual(null, _location.Locate("West"));
+        }
+
+        [Test]
+        public void TestLocationFullDescription()
+        {
+            Assert.AreEqual(
+                "The direction of North",
+                _location.FullDescription);
+        }
+
+        [Test]
+        public void TestLocationName()
+        {
+            Assert.AreEqual("North Location", _location.Name);
+        }
     }
 }
