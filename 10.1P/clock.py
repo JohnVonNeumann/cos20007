@@ -24,4 +24,6 @@ class Clock(object):
                 if (self._hours.ticks != 23):
                     self._hours.increment()
                 else:
-                    raise Exception("Out of time! This clock can only go to 24 hours!")
+                    self._seconds.reset()
+                    self._minutes.reset()
+                    self._hours.reset()
