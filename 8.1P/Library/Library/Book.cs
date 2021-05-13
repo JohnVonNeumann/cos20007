@@ -13,7 +13,7 @@ namespace Library
             _isbn = isbn;
         }
 
-        public string Creator
+        public override string Creator
         {
             get
             {

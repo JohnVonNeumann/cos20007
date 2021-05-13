@@ -13,7 +13,7 @@ namespace Library
             _contentRating = rating;
         }
 
-        public string Creator
+        public override string Creator
         {
             get
             {

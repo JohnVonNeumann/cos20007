@@ -31,5 +31,10 @@ namespace Library.Abstract
                 _onLoan = value;
             }
         }
+
+        public abstract string Creator
+        {
+            get;
+        }
     }
 }
